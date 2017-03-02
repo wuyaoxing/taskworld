@@ -1,7 +1,6 @@
 <template>
   <div class="main">
     <h1>{{ msg }}</h1>
-    <div class="c"></div>
   </div>
 </template>
 
@@ -10,17 +9,13 @@ export default {
   name: 'tw-main',
   data () {
     return {
-      msg: 'Welcome to Your main'
+      msg: 'Welcome to Your tasks'
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="stylus" rel="stylesheet/stylus">
-  .c
-    width 300px
-    height 300px
-    background red
-    margin 0 auto
+<style scoped>
+
 </style>
