@@ -1,6 +1,16 @@
 <template>
   <div class="sidebar">
-    <div class="tw-add"><i class="">+</i></div>
+    <div class="tw-add" @click="showMenu()">
+      <i class="">+</i>
+    </div>
+    <transition name="fade">
+      <div class="tw-add-menu" v-show="isShowMenu">
+        <div class="add-menu-item">新任务</div>
+        <div class="add-menu-item">新建项目</div>
+        <div class="add-menu-item">邀请人员</div>
+        <div class="add-menu-item">新聊天消息</div>
+      </div>
+    </transition>
     <div class="tw-left-nav">
       <div class="tw-menu-item">
         <div class="menu-item">
@@ -34,7 +44,12 @@ export default {
   name: 'tw-sidebar',
   data () {
     return {
-      msg: 'Welcome to Your sidebar'
+      isShowMenu: false
+    }
+  },
+  methods: {
+    showMenu: function () {
+      this.isShowMenu = !this.isShowMenu
     }
   }
 }
@@ -42,6 +57,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" rel="stylesheet/stylus">
+  .fade-enter-active, .fade-leave-active
+    // -webkit-transform-origin top left
+    // transform-origin top left
+    // -webkit-transform translateY(45px)
+    // transform translateY(45px)
+    transition opacity .5s
+  .fade-enter, .fade-leave-active
+    opacity 0
   .sidebar
     width 45px
     height 100%
@@ -49,7 +72,7 @@ export default {
     position absolute
     top 0
     left 0
-    z-index 0
+    z-index 1
     background #1f5c87
     box-shadow 1px 0 3px 0 rgba(0,0,0,.4)
     .tw-add
@@ -75,6 +98,26 @@ export default {
         transform scale(1.1)
         -webkit-transform-origin top left
         transform-origin top left
+    .tw-add-menu
+      position absolute
+      top 45px
+      left 0
+      width 230px
+      padding 10px
+      background #fff
+      border-radius 0 2px 2px 0
+      box-shadow 0 2px 11px 0 rgba(0,0,0,.35)
+      box-sizing border-box
+      .add-menu-item
+        width auto
+        height 45px
+        padding 0 10px
+        margin-bottom 2px
+        cursor pointer
+        font-size 14px
+        color #464c59
+        border-radius 2px
+        display flex
     .tw-left-nav
       text-align center
       line-height 48px

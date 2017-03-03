@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import fullCalendar from 'vue-fullcalendar'
+
+Vue.component('full-calendar', fullCalendar)
 
 Vue.config.productionTip = false
 

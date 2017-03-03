@@ -30,6 +30,8 @@
     color: #2c3e50;
     margin-top: 60px
     .tw-content
+      padding 10px
+      background rgb(230, 232, 236)
       position absolute
       top 45px
       left 45px

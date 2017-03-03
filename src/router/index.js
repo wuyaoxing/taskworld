@@ -5,6 +5,7 @@ import main from '@/components/main'
 import tasks from '@/components/tasks'
 import people from '@/components/people'
 import chat from '@/components/chat'
+import calendar from '@/components/calendar'
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
     {
       path: '/chat',
       component: chat
+    },
+    {
+      path: '/calendar',
+      component: calendar
     }
   ]
 })

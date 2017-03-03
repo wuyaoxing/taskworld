@@ -10,6 +10,7 @@
       <div class="info">您的试用期将在％{smart_count}天内到期。 请联系管理员，以升级工作区</div>
     </div>
     <div class="tw-top-nav_right">
+      <div class="top-menu-item"><router-link to="/calendar">日历</router-link></div>
       <div class="top-menu-item">消息</div>
       <div class="top-menu-item">活动</div>
       <div class="top-menu-item">帮助</div>
@@ -46,7 +47,7 @@ export default {
     position absolute
     top 0
     right 0
-    z-index 0
+    z-index 1
     background #1f5c87
     box-shadow 0 1px 3px 0 rgba(0,0,0,.4)
     -webkit-box-pack justify
@@ -107,6 +108,11 @@ export default {
         cursor pointer
         &:hover
           color #fff
+          a
+              color #fff
+        a
+          color #bbdaef
+          text-decoration none
       .wrapper
         display flex
         cursor pointer
