@@ -10,11 +10,20 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+
+    "ws": "node config/ws-server.js",
+    "start": "npm run ws | npm run dev"
   },
   "dependencies": {
+    "axios": "^0.15.3",
+    "faye-websocket": "^0.11.1",
+    "lodash": "^4.17.2",
+    "rxjs": "^5.2.0",
     "vue": "^2.2.1",
     "vue-router": "^2.2.0",
+    "vuex": "^2.0.0",
+    "vue-rx": "^2.3.1",
     "vue-fullcalendar": "^1.0.9"
   },
   "devDependencies": {
@@ -80,7 +89,9 @@
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.16.1",
-    "webpack-merge": "^2.6.1"
+    "webpack-merge": "^2.6.1",
+    "mockjs": "^1.0.1-beta3",
+    "cross-env": "^1.0.7"
   },
   "engines": {
     "node": ">= 4.0.0",

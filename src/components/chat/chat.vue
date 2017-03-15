@@ -1,7 +1,9 @@
 <template>
   <div class="main">
     <h1>{{ msg }}</h1>
-    <div class="b"></div>
+    <router-link to="/chat/ca">/user/foo/ar</router-link>
+    <router-link to="/chat/cb">/user/foo/bv</router-link>
+    <router-view></router-view>
   </div>
 </template>
 

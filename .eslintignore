@@ -1,2 +1,6 @@
 build/*.js
 config/*.js
+src/views/*.vue
+src/router/*.js
+src/store/*.js
+src/store/modules/*.js

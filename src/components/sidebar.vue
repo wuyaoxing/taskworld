@@ -17,7 +17,7 @@
           <router-link to="/tasks">概览</router-link>
         </div>
         <div class="menu-item">
-          <router-link to="/">项目</router-link>
+          <router-link to="/project">项目</router-link>
         </div>
         <div class="menu-item">
           <router-link to="/people">成员</router-link>
@@ -111,6 +111,7 @@ export default {
       .add-menu-item
         width auto
         height 45px
+        line-height 45px
         padding 0 10px
         margin-bottom 2px
         cursor pointer
@@ -118,6 +119,9 @@ export default {
         color #464c59
         border-radius 2px
         display flex
+        &:hover
+          background #1f5c87
+          color #fff
     .tw-left-nav
       text-align center
       line-height 48px

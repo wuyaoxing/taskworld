@@ -13,6 +13,9 @@
   import sidebar from './components/sidebar.vue'
   export default {
     name: 'app',
+    data () {
+      return {}
+    },
     components: {
       'tw-header': header,
       'tw-sidebar': sidebar
@@ -35,8 +38,8 @@
       position absolute
       top 45px
       left 45px
-      right 0px
-      bottom 0px
+      right 0
+      bottom 0
       overflow hidden
       z-index 0
       webkit-transition .2s ease-in-out
