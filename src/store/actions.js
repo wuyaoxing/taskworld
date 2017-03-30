@@ -38,7 +38,7 @@ export const UserReg = ({ commit }, data) => {
           userName:response.data.username
         };
         commit('USER_REG', token);
-        window.location = '/person'
+        window.location = '/chooseteam'
         // router.replace('person')
       }else{
         // window.location = '/reg'
@@ -91,7 +91,7 @@ export const UserLogin = ({ commit }, data) => {
           userName:response.data.username
         };
         commit('USER_SIGNIN', token);
-        window.location = '/person'
+        window.location = '/chooseteam'
         // router.replace('person')
       }else{
         // window.location = '/login'

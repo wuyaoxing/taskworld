@@ -1,25 +1,24 @@
 <template>
-  <!--<div id="app">-->
-    <!--<tw-header></tw-header>-->
-    <!--<tw-sidebar></tw-sidebar>-->
-    <!--<div class="tw-content">-->
-      <!--<router-view></router-view>-->
-    <!--</div>-->
-  <!--</div>-->
-  <router-view></router-view>
+  <div id="app">
+    <tw-header></tw-header>
+    <tw-sidebar></tw-sidebar>
+    <div class="tw-content">
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
 
 <script>
-//  import header from './components/header.vue'
-//  import sidebar from './components/sidebar.vue'
+  import header from './header/header.vue'
+  import sidebar from './sidebar/sidebar.vue'
   export default {
     name: 'app',
     data () {
       return {}
     },
     components: {
-//      'tw-header': header,
-//      'tw-sidebar': sidebar
+      'tw-header': header,
+      'tw-sidebar': sidebar
     }
   }
 

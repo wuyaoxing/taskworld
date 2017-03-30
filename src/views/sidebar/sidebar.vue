@@ -13,18 +13,18 @@
     </transition>
     <div class="tw-left-nav">
       <div class="tw-menu-item">
-        <div class="menu-item">
-          <router-link to="/tasks">概览</router-link>
+        <div class="menu-item" v-for="menu in menuData">
+          <router-link :to="{path: menu.path}">{{menu.text}}</router-link>
         </div>
-        <div class="menu-item">
-          <router-link to="/project">项目</router-link>
-        </div>
-        <div class="menu-item">
-          <router-link to="/people">成员</router-link>
-        </div>
-        <div class="menu-item">
-          <router-link to="/chat">聊天</router-link>
-        </div>
+        <!--<div class="menu-item">-->
+          <!--<router-link to="/project">项目</router-link>-->
+        <!--</div>-->
+        <!--<div class="menu-item">-->
+          <!--<router-link to="/people">成员</router-link>-->
+        <!--</div>-->
+        <!--<div class="menu-item">-->
+          <!--<router-link to="/chat">聊天</router-link>-->
+        <!--</div>-->
       </div>
       <div class="tw-chat-heads">
         <div class="tw-chat-head" style="transformn:translateY(-9px)">
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+  import routerData from '../../router/routerData.js'
 export default {
   name: 'tw-sidebar',
   data () {
@@ -47,10 +48,26 @@ export default {
       isShowMenu: false
     }
   },
+  computed: {
+    menuData() {
+      for (let item of routerData) {
+        if (item.name === 'team') {
+          return item.children
+        }
+      }
+    }
+  },
   methods: {
     showMenu: function () {
       this.isShowMenu = !this.isShowMenu
     }
+  },
+  mounted() {
+//    this.$router.push({
+//      params: {
+//        teamId: this.teamid
+//      }
+//    })
   }
 }
 </script>

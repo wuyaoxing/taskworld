@@ -14,6 +14,8 @@ import http from 'axios'
 
 Vue.use(VueRx, Rx, http)
 
+import { Button } from 'element-ui'
+Vue.use(Button)
 // export default new Vue({
 //     el: '#app',
 //     router,

@@ -10,7 +10,7 @@
       <div class="info"><span v-show="isLogin()">欢迎您，<router-link to="/person">{{!!user?user.userName:''}}</router-link></span></div>
     </div>
     <div class="tw-top-nav_right">
-      <div class="top-menu-item"><router-link to="/calendar">日历</router-link></div>
+      <!--<div class="top-menu-item"><router-link to="/calendar">日历</router-link></div>-->
       <div class="top-menu-item" @click="mockfn">消息</div>
       <div class="top-menu-item" @click="fetch('http://local2222')">活动</div>
       <div class="top-menu-item" @click="testCache">帮助</div>
@@ -22,8 +22,8 @@
       </div>
       <transition name="fade">
         <div class="tw-add-menu" v-show="isShowMenu">
-          <div class="add-menu-item" v-if="!isLogin()"><router-link to="/login">登录</router-link></div>
-          <div class="add-menu-item" v-if="!isLogin()"><router-link to="/reg">注册</router-link></div>
+          <!--<div class="add-menu-item" v-if="!isLogin()"><router-link to="/login">登录</router-link></div>-->
+          <!--<div class="add-menu-item" v-if="!isLogin()"><router-link to="/reg">注册</router-link></div>-->
           <div class="add-menu-item"><router-link to="/">首页</router-link></div>
           <div class="add-menu-item"><router-link to="/person">个人中心</router-link></div>
           <div class="add-menu-item" v-if="isLogin()"><router-link to="/person">[<a href="javascript:void(0);" @click="userLogout()">退出</a>]</router-link></div>
@@ -37,7 +37,6 @@
 import Mock from 'mockjs'
 import axios from 'axios'
 import { Observable } from 'rxjs/Observable'
-
 import {
   mapGetters,
   mapActions

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class=""><router-link to="/">首页</router-link></div>
     <h2>登录</h2>
     <div>用户名：<input v-model="user.name" type="text"/></div>
     <div>密码：<input v-model="user.password" type="password"/></div>
