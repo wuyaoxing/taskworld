@@ -1,8 +1,0 @@
-build/*.js
-config/*.js
-src/views/
-src/components/calendar/
-src/js/
-src/router/*.js
-src/store/*.js
-src/store/modules/*.js
