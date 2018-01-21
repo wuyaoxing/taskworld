@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "invariant": "^2.2.2",
     "prop-types": "^15.6.0",
     "querystring": "^0.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
-    "recompose": "^0.26.0"
+    "recompose": "^0.26.0",
+    "uniloc": "^0.3.0",
+    "url-mapper": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
