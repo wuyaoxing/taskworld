@@ -8,6 +8,9 @@ const ROUTE_DEFINITION = {
         }
     },
     other: {
+        root: {
+            route: '/'
+        },
         error404: {
             route: '/error/404'
         }

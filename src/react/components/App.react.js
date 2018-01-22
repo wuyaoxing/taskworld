@@ -27,7 +27,7 @@ class App extends React.PureComponent {
     }
 
     renderContent = () => {
-        return this.props.route ? renderRoute(this.props.route) : <LoadingScreen />
+        return !this.props.route ? renderRoute({ name: 'projects' }) : <LoadingScreen />
     }
 
     render() {

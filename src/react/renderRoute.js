@@ -1,12 +1,16 @@
 import _ from 'lodash'
 import React from 'react'
 
+import RootRouteRedirector from '../core/fe-routes/RootRouteRedirector.react'
 import ProjectListPage from './components/projects/project-list/ProjectListPage.react'
+import OhNoScreen from './components/misc/OhNoScreen.react'
 
 import { routes } from '../core/fe-routes/routes'
 
 export const renderers = {
-    projects: component(ProjectListPage)
+    root: component(RootRouteRedirector),
+    projects: component(ProjectListPage),
+    error404: component(OhNoScreen, { message: 'Page Not Found'})
 }
 
 function component(Component, props = {}) {
