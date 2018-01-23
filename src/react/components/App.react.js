@@ -1,10 +1,32 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { compose, lifecycle } from 'recompose'
 
 import AppLayout from '../../core/fe-app-layout/AppLayout.react'
 import MainLayoutContainer from '../containers/layout/MainLayoutContainer.react'
+
+import history from '../../core/fe-frontend-globals/history'
+import { router } from '../../core/fe-routes/routes'
 import renderRoute from '../renderRoute'
 import LoadingScreen from './misc/LoadingScreen.react'
+
+export const enhance = compose(
+    lifecycle({
+        componentWillMount() {
+            history.listen(location => {
+                this.setState({
+                    route: router.resolve(location.pathname)
+                })
+            })
+            this.init()
+        },
+        init() {
+            this.setState({
+                route: router.resolve(history.location.pathname)
+            })
+        }
+    })
+)
 
 class App extends React.PureComponent {
 
@@ -27,7 +49,7 @@ class App extends React.PureComponent {
     }
 
     renderContent = () => {
-        return !this.props.route ? renderRoute({ name: 'projects' }) : <LoadingScreen />
+        return this.props.route ? renderRoute(this.props.route) : <LoadingScreen />
     }
 
     render() {
@@ -35,4 +57,4 @@ class App extends React.PureComponent {
     }
 }
 
-export default App
+export default enhance(App)

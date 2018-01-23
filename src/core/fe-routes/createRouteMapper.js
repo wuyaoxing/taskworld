@@ -99,7 +99,7 @@ const protectFromInfiniteRecursion = (() => {
 })()
 
 function createRouteCompiler(path) {
-    const router = uniloc({ route: 'GET' + path })
+    const router = uniloc({ route: 'GET ' + path })
     return {
         parse(url) {
             const result = router.lookup(url)
