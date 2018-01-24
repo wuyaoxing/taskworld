@@ -41,3 +41,7 @@ export const routes = (() => {
 })()
 
 export const router = createRouteMapper(routes)
+
+export function generate(route) {
+    return router.generate(route)
+}
