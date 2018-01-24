@@ -3,6 +3,7 @@ import React from 'react'
 
 import RootRouteRedirector from '../core/fe-routes/RootRouteRedirector.react'
 import ProjectListPage from './components/projects/project-list/ProjectListPage.react'
+import MemberPage from './components/people/MemberPage.react'
 import OhNoScreen from './components/misc/OhNoScreen.react'
 
 import { routes } from '../core/fe-routes/routes'
@@ -10,6 +11,7 @@ import { routes } from '../core/fe-routes/routes'
 export const renderers = {
     root: component(RootRouteRedirector),
     projects: component(ProjectListPage),
+    members: component(MemberPage),
     error404: component(OhNoScreen, { message: 'Page Not Found'})
 }
 

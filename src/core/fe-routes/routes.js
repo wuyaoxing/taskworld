@@ -7,6 +7,11 @@ const ROUTE_DEFINITION = {
             route: '/projects'
         }
     },
+    members: {
+        members: {
+            route: '/members'
+        }
+    },
     other: {
         root: {
             route: '/'

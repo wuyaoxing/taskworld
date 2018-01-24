@@ -17,7 +17,9 @@ export default class RootRouteRedirector extends React.Component {
 
     redirectToPage = redirectPage => {
         const showRoute = this.props.activeShowRoute ? `?show=${this.props.activeShowRoute}` : ''
-        window.location.href = `#/${redirectPage}${showRoute}`
+        setTimeout(() => {
+            window.location.href = `#/${redirectPage}${showRoute}`
+        }, 2000)
     }
 
     render() {
