@@ -1,3 +1,5 @@
+import './MainLayout.css'
+
 import React from 'react'
 import TopNav from './TopNav.react'
 import LeftNav from './LeftNav.react'

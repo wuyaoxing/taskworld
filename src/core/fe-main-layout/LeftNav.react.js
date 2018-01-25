@@ -1,3 +1,5 @@
+import './LeftNav.css'
+
 import React from 'react'
 
 import LeftNavLink from './LeftNavLink.react'
