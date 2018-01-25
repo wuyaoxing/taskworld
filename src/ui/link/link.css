@@ -1,0 +1,7 @@
+.ui-link {
+  color: #27b6ba;
+}
+.ui-link.\--unstyled,
+.ui-link.\--unstyled:hover {
+  color: inherit;
+}

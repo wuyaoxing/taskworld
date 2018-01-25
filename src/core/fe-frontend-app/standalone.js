@@ -1,3 +1,5 @@
+import '../../ui/normalize.css'
+import '../../ui/index.css'
 
 const loadStartApp = () => new Promise(resolve => {
     require.ensure([], () => {
