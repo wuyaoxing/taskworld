@@ -1,6 +1,7 @@
 import React from 'react'
 
 import LeftNavLink from './LeftNavLink.react'
+import LeftNavItem from './LeftNavItem.react'
 
 export function getNavigationItems () {
     return [
@@ -19,6 +20,7 @@ export function getNavigationItems () {
 
 export default class LeftNav extends React.Component {
     renderMenuItems = items => items.map((item, index) => {
+        const Component = item.component || LeftNavItem
         return(
             <LeftNavLink
                 key={item.route}
@@ -27,6 +29,10 @@ export default class LeftNav extends React.Component {
                 resolvedRoute={this.props.resolvedRoute}
                 linkOrder={index + 1}
             >
+                <Component
+                    iconName={item.icon}
+                    active={true}
+                />
                 {item.title}
             </LeftNavLink>
         )
