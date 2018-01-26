@@ -10,6 +10,10 @@ import { router } from '../../core/fe-routes/routes'
 import renderRoute from '../renderRoute'
 import LoadingScreen from './misc/LoadingScreen.react'
 
+import { generateId, generator } from '../../core/object-id'
+
+console.log(generateId(), generator.generate(1516982287525))
+
 export const enhance = compose(
     lifecycle({
         componentWillMount() {
