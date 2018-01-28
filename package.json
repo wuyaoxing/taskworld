@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "project best practices",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,9 +17,17 @@
     "url-mapper": "^2.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-import": "^1.2.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "react-app-rewire-eslint": "^0.2.3",
+    "react-app-rewire-less": "^2.1.0",
+    "react-app-rewired": "^1.4.0"
   }
 }

@@ -21,7 +21,7 @@ export default class Link extends React.PureComponent {
 
     onClick = e => {
         e.stopPropagation()
-        if(this.props.onClick) {
+        if (this.props.onClick) {
             this.props.onClick(e)
         }
     }
@@ -34,22 +34,23 @@ export default class Link extends React.PureComponent {
         const href = this.props.href
 
         const extraProps = {}
-        if(/^\w+:\/\//.test(href)) {
+        if (/^\w+:\/\//.test(href)) {
             extraProps.target = this.props.target ? this.props.target : '_blank'
         }
 
         return (
-            <a href={href}
-               className={className}
-               onClick={this.onClick}
-               onMouseOver={this.props.onMouseOver}
-               onMouseDown={this.props.onMouseDown}
-               onMouseUp={this.props.onMouseUp}
-               onMouseLeave={this.props.onMouseLeave}
-               download={this.props.download}
-               {...extraProps}
+            <a
+                href={href}
+                className={className}
+                onClick={this.onClick}
+                onMouseOver={this.props.onMouseOver}
+                onMouseDown={this.props.onMouseDown}
+                onMouseUp={this.props.onMouseUp}
+                onMouseLeave={this.props.onMouseLeave}
+                download={this.props.download}
+                {...extraProps}
             >
-            {this.props.children}
+                {this.props.children}
             </a>
         )
     }

@@ -5,15 +5,12 @@
   "editor.minimap.enabled": true,
   "editor.dragAndDrop": true,
   "emmet.triggerExpansionOnTab": true,
+  "emmet.syntaxProfiles": { "javascript": "jsx" },
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "html"
-  ],
+  "eslint.validate": ["javascript", "javascriptreact", "html"],
   "editor.formatOnSave": false,
   "editor.detectIndentation": false,
   "html.format.extraLiners": "",
@@ -23,7 +20,7 @@
   "vsicons.projectDetection.autoReload": true,
   "vsicons.presets.angular": false,
   "less.lint.zeroUnits": "error",
-  "beautify.tabSize": 2,
+  "beautify.tabSize": 1,
   "beautify.options": {},
   "[css]": {
     "editor.insertSpaces": true,
@@ -36,5 +33,5 @@
   "prettier.eslintIntegration": true,
   "prettier.singleQuote": true,
   "prettier.semi": false,
-  "prettier.tabWidth": 4
+  "prettier.tabWidth": 2
 }
