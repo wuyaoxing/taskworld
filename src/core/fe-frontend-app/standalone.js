@@ -1,5 +1,4 @@
-import '../../ui/normalize.css'
-import '../../ui/index.css'
+import '../../assets/less/index.less'
 
 const loadStartApp = () => new Promise(resolve => {
     require.ensure([], () => {
