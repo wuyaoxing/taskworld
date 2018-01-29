@@ -12,9 +12,9 @@ import LoadingScreen from './misc/LoadingScreen.react'
 
 import { getRouteSectionName } from '../../core/fe-routes/routes'
 
-import { generateId, generator } from '../../core/object-id'
+import createLocalStorage from '../../core/local-storage/createLocalStorage'
 
-console.log(generateId(), generator.generate(1516982287525))
+console.log(createLocalStorage('test'))
 
 export const enhance = compose(
     lifecycle({

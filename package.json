@@ -1,5 +1,5 @@
 {
-  "name": "project best practices",
+  "name": "project-best-practices",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
     "recompose": "^0.26.0",
+    "rxjs": "^5.5.6",
     "uniloc": "^0.3.0",
     "url-mapper": "^2.0.0"
   },
