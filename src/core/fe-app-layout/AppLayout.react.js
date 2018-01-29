@@ -1,4 +1,4 @@
-import './AppLayout.css'
+import './AppLayout.less'
 
 import PropTypes from 'prop-types'
 import React from 'react'

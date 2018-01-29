@@ -10,6 +10,8 @@ import { router } from '../../core/fe-routes/routes'
 import renderRoute from '../renderRoute'
 import LoadingScreen from './misc/LoadingScreen.react'
 
+import { getRouteSectionName } from '../../core/fe-routes/routes'
+
 import { generateId, generator } from '../../core/object-id'
 
 console.log(generateId(), generator.generate(1516982287525))
@@ -33,7 +35,6 @@ export const enhance = compose(
 )
 
 class App extends React.PureComponent {
-
     static propTypes = {
         route: PropTypes.object
     }
@@ -42,10 +43,14 @@ class App extends React.PureComponent {
         return <h1>header</h1>
     }
 
+    renderFooter = () => {
+        return <h1>footer</h1>
+    }
+
     renderAppLayout = () => {
         return (
-            <AppLayout north={this.renderHeader()}>
-                <MainLayoutContainer>
+            <AppLayout north={this.renderHeader()} south={this.renderFooter()}>
+                <MainLayoutContainer currentSection={getRouteSectionName(this.props.route)}>
                     {this.renderContent()}
                 </MainLayoutContainer>
             </AppLayout>
@@ -53,7 +58,11 @@ class App extends React.PureComponent {
     }
 
     renderContent = () => {
-        return this.props.route ? renderRoute(this.props.route) : <LoadingScreen />
+        return this.props.route ? (
+            renderRoute(this.props.route)
+        ) : (
+            <LoadingScreen />
+        )
     }
 
     render() {

@@ -1,0 +1,28 @@
+.app-left-nav-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 48px;
+  color: #bbdaef;
+  cursor: pointer;
+  &:hover,
+  &.\--active {
+    color: #fff;
+  }
+  &__icon {
+    font-size: 18px;
+  }
+  &__label {
+    margin-left: 15px;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    transform: translate(100%, -100%);
+  }
+}

@@ -20,7 +20,7 @@ export default class LeftNavLink extends React.Component {
         return (
             <div>
                 <RouteLink
-                    className="left-nav-link"
+                    className="app-left-nav-link"
                     name={this.props.route}
                     onClick={this.onClick}
                 >

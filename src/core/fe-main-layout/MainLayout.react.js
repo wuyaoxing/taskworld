@@ -1,14 +1,25 @@
-import './MainLayout.css'
+import './MainLayout.less'
 
+import PropTypes from 'prop-types'
 import React from 'react'
 import TopNav from './TopNav.react'
 import LeftNav from './LeftNav.react'
 
 class MainLayout extends React.Component {
-    renderTopNav = () => <TopNav className="main-layout-top-nav" />
-    renderLeftNav = () => <LeftNav className="main-layout-left-nav" />
+    static propTypes = {
+        currentSection: PropTypes.string.isRequired
+    }
+    renderTopNav = () => <TopNav className="main-layout__top-nav" />
+    renderLeftNav = () => (
+        <LeftNav
+            className="main-layout__left-nav"
+            currentSection={this.props.currentSection}
+        />
+    )
     renderContent = () => (
-        <section className="main-layout-content">{this.props.children}</section>
+        <section className="main-layout__content">
+            {this.props.children}
+        </section>
     )
 
     render() {

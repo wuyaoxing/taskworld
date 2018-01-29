@@ -45,3 +45,7 @@ export const router = createRouteMapper(routes)
 export function generate(route) {
     return router.generate(route)
 }
+
+export function getRouteSectionName({ name }) {
+    return router.getRouteByName(name).sectionName
+}
