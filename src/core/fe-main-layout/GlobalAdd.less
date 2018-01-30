@@ -1,0 +1,59 @@
+.app-global-add {
+  &__button {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #4882ab;
+    color: #fff;
+    font-size: 27px;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+    transform: scale(0.9);
+    transform-origin: top left;
+    -webkit-tap-highlight-color: transparent;
+    &.\--active .app-global-add__icon {
+      transform: rotate(45deg) scale(0.8);
+    }
+    &:active {
+      background-color: #2c6a95;
+    }
+    &:hover {
+      box-shadow: 2px 2px 11px 0 rgba(0, 0, 0, 0.5);
+      transform: scale(1);
+    }
+    &:hover .app-global-add__icon {
+      transform: scale(1);
+    }
+    &:hover.\--active .app-global-add__icon {
+      transform: rotate(45deg) scale(1);
+    }
+    &:hover.\--mobile {
+      box-shadow: none;
+    }
+    &.\--mobile {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      transform: scale(1);
+    }
+    &.\--mobile .app-global-add__icon {
+      transform: scale(1);
+    }
+    &.\--mobile &.\--active .app-global-add__icon {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__menu {
+    z-index: 0;
+  }
+  &__icon {
+    padding-bottom: 4%;
+    transition: 0.1s ease-in-out;
+    transform: scale(0.8);
+  }
+}
