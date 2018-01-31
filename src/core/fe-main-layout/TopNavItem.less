@@ -1,0 +1,23 @@
+.app-top-nav-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  color: inherit;
+  cursor: pointer;
+}
+.app-top-nav-item:hover {
+  color: #fff;
+}
+.app-top-nav-item__badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  transform: translate(50%, -50%);
+}
+.app-top-nav-item.\--active {
+  color: #fff;
+  pointer-events: none;
+}

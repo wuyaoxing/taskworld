@@ -24,7 +24,8 @@ class MainLayout extends React.Component {
         userAvatarSource: PropTypes.string,
 
         mobileView: PropTypes.bool.isRequired,
-        hideHelpCenter: PropTypes.bool.isRequired
+        hideHelpCenter: PropTypes.bool.isRequired,
+        renderHelpCenter: PropTypes.func.isRequired
     }
 
     constructor(props) {
@@ -81,11 +82,15 @@ class MainLayout extends React.Component {
         <div className="main-layout__global-add">{this.renderGlobalAdd()}</div>
     )
 
-    renderTopNav = () => <TopNav className="main-layout__top-nav"
-        renderWorkspaceAndUserPanel={this.renderWorkspaceAndUserPanel}
-        mobileView={this.props.mobileView}
-        hideHelpCenter={this.props.hideHelpCenter}
-    />
+    renderTopNav = () => (
+        <TopNav
+            className="main-layout__top-nav"
+            renderWorkspaceAndUserPanel={this.renderWorkspaceAndUserPanel}
+            mobileView={this.props.mobileView}
+            hideHelpCenter={this.props.hideHelpCenter}
+            renderHelpCenter={this.props.renderHelpCenter}
+        />
+    )
 
     renderLeftNav = () => (
         <LeftNav
