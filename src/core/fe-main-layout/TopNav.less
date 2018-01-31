@@ -1,0 +1,67 @@
+.app-top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f5c87;
+  color: #bbdaef;
+  font-size: 18px;
+}
+.app-top-nav__left,
+.app-top-nav__right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.app-top-nav__left > * {
+  margin-left: 10px;
+}
+.app-top-nav__help-center {
+  display: inherit;
+  transition: none;
+}
+.app-top-nav__help-center:hover {
+  color: #fff;
+}
+.app-top-nav__time-tracking-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+  width: 130px;
+  cursor: pointer;
+}
+.app-top-nav__wrapper {
+  display: flex;
+  height: 100%;
+}
+.app-top-nav__workspace-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  width: 204px;
+  height: 45px;
+  border-left: 2px solid #2c6a95;
+  color: #deecf6;
+  font-size: 14px;
+  cursor: pointer;
+}
+.app-top-nav__workspace-selector > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+.app-top-nav__user-avatar {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+.app-top-nav__user-avatar:hover {
+  opacity: 0.8;
+}
+.app-top-nav.\--mobile .app-top-nav__left > * {
+  margin-left: 0;
+}
+.app-top-nav.\--mobile .app-top-nav__right > * {
+  border: none;
+}
