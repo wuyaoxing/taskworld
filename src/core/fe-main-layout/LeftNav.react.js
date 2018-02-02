@@ -18,7 +18,12 @@ export function getNavigationItems() {
             route: 'members',
             icon: 'colleague',
             title: 'meber'
-        }
+        },
+        {
+            route: 'test',
+            icon: 'reminder',
+            title: 'test'
+        },
     ]
 }
 

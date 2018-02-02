@@ -12,6 +12,11 @@ const ROUTE_DEFINITION = {
             route: '/members'
         }
     },
+    test: {
+        test: {
+            route: '/test'
+        }
+    },
     other: {
         root: {
             route: '/'
@@ -25,16 +30,21 @@ const ROUTE_DEFINITION = {
 export const routes = (() => {
     const routeArray = []
     const routeMap = {}
-    for(const sectionName of Object.keys(ROUTE_DEFINITION)) {
+    for (const sectionName of Object.keys(ROUTE_DEFINITION)) {
         const sectionRoutes = ROUTE_DEFINITION[sectionName]
-        for(const routeName of Object.keys(sectionRoutes)) {
+        for (const routeName of Object.keys(sectionRoutes)) {
             const route = sectionRoutes[routeName]
-            invariant(!routeMap[routeName], `Route ${route} must not be duplicated in other sections`)
-            routeArray.push(routeMap[routeName] = {
-                ...route,
-                name: routeName,
-                sectionName: sectionName
-            })
+            invariant(
+                !routeMap[routeName],
+                `Route ${route} must not be duplicated in other sections`
+            )
+            routeArray.push(
+                (routeMap[routeName] = {
+                    ...route,
+                    name: routeName,
+                    sectionName: sectionName
+                })
+            )
         }
     }
     return routeArray
