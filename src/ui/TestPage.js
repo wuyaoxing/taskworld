@@ -1,8 +1,6 @@
 import React from 'react'
 
-import {
-    Divider
-} from '../ui'
+import { Divider, Tooltip } from '../ui'
 
 export default class TestPage extends React.Component {
     render() {
@@ -16,6 +14,11 @@ export default class TestPage extends React.Component {
                 <Divider size="L" style={{ background: '#333' }} />
                 <Divider size="XL" style={{ background: '#333' }} />
                 <Divider size="XXL" style={{ background: '#333' }} />
+                <h4>Tooltip</h4>
+                <div>
+                    Tooltip
+                    <Tooltip position="top">dcvdvdvdvdvd</Tooltip>
+                </div>
             </div>
         )
     }

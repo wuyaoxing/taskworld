@@ -14,6 +14,8 @@ import { getRouteSectionName } from '../../core/fe-routes/routes'
 
 import createLocalStorage from '../../core/local-storage/createLocalStorage'
 
+import { TooltipLayer } from '../../ui'
+
 console.log(createLocalStorage('test'))
 
 export const enhance = compose(
@@ -50,7 +52,9 @@ class App extends React.PureComponent {
     renderAppLayout = () => {
         return (
             <AppLayout north={this.renderHeader()} south={this.renderFooter()}>
-                <MainLayoutContainer currentSection={getRouteSectionName(this.props.route)}>
+                <MainLayoutContainer
+                    currentSection={getRouteSectionName(this.props.route)}
+                >
                     {this.renderContent()}
                 </MainLayoutContainer>
             </AppLayout>
@@ -66,7 +70,12 @@ class App extends React.PureComponent {
     }
 
     render() {
-        return <section className="app">{this.renderAppLayout()}</section>
+        return (
+            <section className="app">
+                {this.renderAppLayout()}
+                <TooltipLayer />
+            </section>
+        )
     }
 }
 
