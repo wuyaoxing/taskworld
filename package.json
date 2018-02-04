@@ -5,6 +5,7 @@
   "dependencies": {
     "bson-objectid": "^1.2.2",
     "classnames": "^2.2.5",
+    "events": "^2.0.0",
     "history": "^4.7.2",
     "invariant": "^2.2.2",
     "prop-types": "^15.6.0",

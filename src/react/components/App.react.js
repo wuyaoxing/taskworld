@@ -5,7 +5,7 @@ import { compose, lifecycle } from 'recompose'
 import AppLayout from '../../core/fe-app-layout/AppLayout.react'
 import MainLayoutContainer from '../containers/layout/MainLayoutContainer.react'
 
-import history from '../../core/fe-frontend-globals/history'
+import history from '../../core/app-frontend-globals/history'
 import { router } from '../../core/fe-routes/routes'
 import renderRoute from '../renderRoute'
 import LoadingScreen from './misc/LoadingScreen.react'

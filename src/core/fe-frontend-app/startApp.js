@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import * as Pages from './Pages'
-import { getPathname, hrefForPathname } from '../fe-frontend-globals/PathnameRouting'
+import { getPathname, hrefForPathname } from '../app-frontend-globals/PathnameRouting'
 
 export async function startApp() {
     try {
