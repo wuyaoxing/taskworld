@@ -15,6 +15,7 @@
     "react-scripts": "1.0.17",
     "recompose": "^0.26.0",
     "rxjs": "^5.5.6",
+    "socket.io": "^2.0.4",
     "socket.io-client": "^2.0.4",
     "uniloc": "^0.3.0",
     "url-mapper": "^2.0.0"
@@ -23,7 +24,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node ./src/backend-server/index.js"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.2.0",
