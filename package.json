@@ -15,6 +15,7 @@
     "react-scripts": "1.0.17",
     "recompose": "^0.26.0",
     "rxjs": "^5.5.6",
+    "socket.io-client": "^2.0.4",
     "uniloc": "^0.3.0",
     "url-mapper": "^2.0.0"
   },
