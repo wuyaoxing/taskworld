@@ -1,4 +1,4 @@
-import { main } from './core/fe-frontend-app/standalone'
+import { main } from './core/app-frontend-app/standalone'
 import registerServiceWorker from './registerServiceWorker'
 
 main()

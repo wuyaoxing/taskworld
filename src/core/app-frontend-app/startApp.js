@@ -4,15 +4,18 @@ import ReactDOM from 'react-dom'
 import * as Pages from './Pages'
 import { getPathname, hrefForPathname } from '../app-frontend-globals/PathnameRouting'
 
-export async function startApp() {
+export async function startApp({ loadingScreen }) {
     try {
         const route = resolveRoute(getPathname())
         return await route({
+            loadingScreen,
             render
         })
     } catch (e) {
         console.log(e)
         return Pages.showLoginPage()
+    } finally {
+        loadingScreen.remove()
     }
 }
 
@@ -51,10 +54,12 @@ function enterWorkspaceByName(workspaceName) {
         userId: '20181016',
     }
     return env => {
+        const { loadingScreen } = env
         return enterWorkspace({
             workspaceName,
             accessToken,
-            userId
+            userId,
+            onStatus: status => { loadingScreen.update({ status }) }
         })
     }
 }
@@ -65,7 +70,7 @@ function enterWorkspace({
     userId,
     onStatus
 }) {
-    // onStatus('Loading workspace data……')
+    onStatus('Loading workspace data……')
     return new Promise(resolve => {
         require.ensure([ ], () => {
             const AppLauncher = require('./AppLauncher')
@@ -74,7 +79,7 @@ function enterWorkspace({
                 userId,
                 workspaceName
             }))
-        }, 'fe-app')
+        }, 'app')
     })
 }
 
