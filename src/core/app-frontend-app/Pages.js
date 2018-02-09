@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import LoginPage from '../fe-login-page/LoginPage.react'
+import LoginPage from '../app-login-page/LoginPage.react'
 import ErrorPage from '../../react/components/errors/ErrorPage.react'
 
 export function showLoginPage() {
