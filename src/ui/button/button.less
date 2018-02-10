@@ -1,0 +1,323 @@
+.ui-button {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 13px;
+  min-height: 28px;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  background-color: #27b6ba;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.ui-button button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.ui-button__main-container {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+}
+.ui-button__main-container:empty {
+  display: none;
+}
+.ui-button__icon {
+  position: relative;
+  top: 1px;
+  padding: 0 2px;
+}
+.ui-button__icon.\--extra-margin {
+  margin-right: 5px;
+}
+.ui-button__text {
+  padding: 0 2px;
+}
+.ui-button__badge {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateY(-50%);
+}
+.ui-button__badge > * {
+  margin-left: 3px;
+}
+.ui-button.\--raised {
+  min-height: 28px;
+  height: 28px;
+}
+.ui-button.\--raised:hover {
+  color: #fff;
+}
+.ui-button:hover {
+  background-color: #31a7aa;
+  color: #fff;
+}
+.ui-button:active {
+  background-color: #31a7aa;
+  color: #fff;
+  transform: translate(0, 2px);
+}
+.ui-button.\--modal-positive {
+  background-color: #27b6ba;
+}
+.ui-button.\--modal-positive:hover,
+.ui-button.\--modal-positive:focus {
+  background-color: #31a7aa;
+  color: #fff;
+}
+.ui-button.\--modal-positive:active {
+  background-color: #31a7aa;
+  color: #fff;
+  transform: translate(0, 2px);
+}
+.ui-button.\--modal-positive.\--disabled {
+  background-color: #e6e8ec;
+  color: #b0b4bb;
+}
+.ui-button.\--modal-negative {
+  background-color: #e6e8ec;
+  color: #696f7a;
+}
+.ui-button.\--modal-negative:hover,
+.ui-button.\--modal-negative:focus {
+  background-color: #d4d6db;
+  color: #696f7a;
+}
+.ui-button.\--modal-negative:active {
+  background-color: #d4d6db;
+  color: #696f7a;
+  transform: translate(0, 2px);
+}
+.ui-button.\--modal-negative.\--disabled {
+  background-color: #e6e8ec;
+  color: #b0b4bb;
+}
+.ui-button.\--blend-dark {
+  min-height: 28px;
+  background-color: #fff;
+  color: #696f7a;
+}
+.ui-button.\--blend-dark:hover,
+.ui-button.\--blend-dark:focus {
+  background-color: #f3f4f5;
+  color: #464c59;
+}
+.ui-button.\--blend-dark:active {
+  background-color: #f3f4f5;
+  color: #464c59;
+}
+.ui-button.\--blend-dark.\--disabled {
+  background-color: #f3f4f5;
+  color: #464c59;
+}
+.ui-button.\--amber {
+  min-height: 28px;
+  height: 28px;
+  background-color: #ff941d;
+  color: #fff;
+}
+.ui-button.\--amber:hover,
+.ui-button.\--amber:focus {
+  background-color: #f6892d;
+}
+.ui-button.\--amber:active {
+  background-color: #ff941d;
+  color: #fff;
+}
+.ui-button.\--amber.\--disabled {
+  background-color: #696f7a;
+  color: #b0b4bb;
+}
+.ui-button.\--danger {
+  min-width: 100px;
+  min-height: 34px;
+  height: 34px;
+  background-color: #e95e51;
+}
+.ui-button.\--danger:hover,
+.ui-button.\--danger:focus {
+  background-color: #d5493b;
+  color: #fff;
+}
+.ui-button.\--danger:active {
+  background-color: #d5493b;
+  color: #fff;
+  transform: translate(0, 2px);
+}
+.ui-button.\--danger.\--disabled {
+  background-color: #e6e8ec;
+  color: #b0b4bb;
+}
+.ui-button.\--fill {
+  width: 100%;
+}
+.ui-button.\--with-border {
+  border: 1px solid #d4d6db;
+}
+.ui-button.\--with-border:hover {
+  border: 1px solid #b0b4bb;
+}
+.ui-button.\--loading {
+  background-color: #e6e8ec;
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none !important /* Safari for iOS */;
+  -webkit-user-select: none /* Chrome, Safari for Mac, Opera */;
+  -moz-user-select: none /* Firefox */;
+  -ms-user-select: none /* Internet Explorer, Edge */;
+  -webkit-user-drag: none;
+}
+.ui-button.\--loading .ui-loading__child {
+  background-color: #8d919a;
+}
+.ui-button.\--disabled {
+  background-color: #e6e8ec;
+  color: #b0b4bb;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+  -webkit-touch-callout: none !important /* Safari for iOS */;
+  -webkit-user-select: none /* Chrome, Safari for Mac, Opera */;
+  -moz-user-select: none /* Firefox */;
+  -ms-user-select: none /* Internet Explorer, Edge */;
+  -webkit-user-drag: none;
+}
+.ui-button.\--disabled:hover {
+  color: #b0b4bb;
+}
+.ui-button.\--primary-transparent {
+  min-height: 28px;
+  border: 1px solid #27b6ba;
+  background-color: transparent;
+  color: #27b6ba;
+}
+.ui-button.\--primary-transparent:hover {
+  background-color: #27b6ba;
+  color: #fff;
+}
+.ui-button.\--secondary-transparent {
+  border: 2px solid #d4d6db;
+  background-color: transparent;
+  color: #8d919a;
+}
+.ui-button.\--secondary-transparent:hover {
+  border: 2px solid #b0b4bb;
+}
+.ui-button.\--red {
+  background-color: #e95e51;
+}
+.ui-button.\--red:hover {
+  background-color: #d5493b;
+}
+.ui-button.\--floating-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: #e6e8ec;
+  color: #696f7a;
+}
+.ui-button.\--floating-panel:hover:not(.\--disabled),
+.ui-button.\--floating-panel:active {
+  background: #27b6ba;
+  color: #fff;
+}
+.ui-button.\--size_smallest {
+  min-height: 16px;
+  line-height: 16px;
+  height: 16px;
+  font-size: 10px;
+}
+.ui-button.\--size_extra-small {
+  min-height: 18px;
+  line-height: 18px;
+  height: 18px;
+  font-size: 11px;
+}
+.ui-button.\--size_small {
+  min-height: 26px;
+  line-height: 26px;
+  height: 26px;
+  font-size: 14px;
+}
+.ui-button.\--size_regular {
+  min-height: 28px;
+  line-height: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+.ui-button.\--size_medium {
+  min-height: 34px;
+  line-height: 34px;
+  height: 34px;
+  font-size: 14px;
+}
+.ui-button.\--size_large {
+  min-height: 42px;
+  line-height: 42px;
+  height: 42px;
+  font-size: 14px;
+}
+.ui-button.\--size_narrow-small {
+  min-height: 25px;
+  line-height: 25px;
+  padding: 0 5px;
+  border-radius: 2px;
+  height: 25px;
+  font-size: 14px;
+}
+.ui-button.\--size_wide-medium {
+  min-height: 34px;
+  line-height: 34px;
+  padding: 0 20px;
+  min-width: 100px;
+  height: 34px;
+  font-size: 14px;
+}
+.ui-button.\--size_wide-large {
+  min-height: 42px;
+  line-height: 42px;
+  padding: 0 20px;
+  min-width: 173px;
+  height: 42px;
+  font-size: 14px;
+}
+.ui-button.\--size_full-width {
+  min-height: 42px;
+  line-height: 42px;
+  width: 100%;
+  height: 42px;
+  font-size: 14px;
+}
+.ui-button.\--size_text-for-floating-panel {
+  min-height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  min-width: 30px;
+  height: 30px;
+  font-size: 14px;
+}
+.ui-button.\--size_icon-for-floating-panel {
+  min-height: 30px;
+  line-height: 30px;
+  padding: 0;
+  min-width: 30px;
+  height: 30px;
+  font-size: 16px;
+}
+.ui-button.\--font-weight_normal {
+  font-weight: 400;
+}
+.ui-button.\--font-weight_bold {
+  font-weight: 600;
+}
