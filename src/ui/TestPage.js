@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Divider, Tooltip, Button } from '../ui'
+import { Divider, Tooltip, Button, Input } from '../ui'
 
 export default class TestPage extends React.Component {
     render() {
@@ -8,6 +8,12 @@ export default class TestPage extends React.Component {
             <div>
                 <h2>TestPage</h2>
                 <Divider style={{ background: '#333' }} />
+
+                <h4>Input</h4>
+                <p>
+                    <Input type="number"></Input>
+                </p>
+
                 <h4>Button</h4>
                 <p>
                     <Button size="smallest">smallest</Button>

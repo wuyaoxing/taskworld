@@ -5,6 +5,7 @@ import Divider from './divider'
 import Tooltip, { TooltipLayer } from './tooltip'
 
 import Button from './button'
+import Input from './input'
 
 export {
     Loading,
@@ -13,5 +14,6 @@ export {
     Divider,
     Tooltip,
     TooltipLayer,
-    Button
+    Button,
+    Input
 }
