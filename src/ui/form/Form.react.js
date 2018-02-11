@@ -19,7 +19,7 @@ export default class Form extends React.PureComponent {
                 className={classes}
                 onSubmit={this.props.onSubmit}
             >
-                {this.props.chidren}
+                {this.props.children}
             </form>
         )
     }

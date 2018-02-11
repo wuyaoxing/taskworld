@@ -5,6 +5,7 @@ import React from 'react'
 
 import withClientInfo from '../fe-client-info/withClientInfo'
 import { ResponsiveFrontPage } from '../../react/containers/layout/ResponsiveFrontPage.react'
+import LoginForm from '../../react/components/onboarding/forms/LoginForm.react'
 
 const enhance = withClientInfo(client => ({
     mobile: client.isMobile(),
@@ -17,6 +18,15 @@ class LoginPage extends React.PureComponent {
         cordova: PropTypes.bool
     }
 
+    state = {
+        email: '',
+        isForgotPassword: false
+    }
+
+    onSubmit = async data => {
+
+    }
+
     renderLoginForm = () => {
         const header = (
             <div>
@@ -24,11 +34,11 @@ class LoginPage extends React.PureComponent {
             </div>
         )
         return (
-            <div>
-                {header}
-                <input type="text"/>
-                <input type="password"/>
-            </div>
+            <LoginForm
+                preFilledFormValues={{ email: this.state.email }}
+                header={header}
+                onSubmit={this.onSubmit}
+            />
         )
     }
 
