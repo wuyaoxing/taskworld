@@ -115,6 +115,7 @@ export default class FormInput extends React.Component {
     }
 
     onKeyDown = e => {
+        console.log(e, e.key, e.keyCode)
         if (e.key === 'CapsLock' && !this.state.isCapsLockEnable) {
             this.setState({ isCapsLockEnable: true })
         }
@@ -266,14 +267,14 @@ export default class FormInput extends React.Component {
                     <div
                         className={controlClasses}
                         onKeyUp={this.onKeyUp}
-                        onKeyDown={this.props.onKeyDown}
-                        onKeyPress={this.props.onKeyPress}
+                        onKeyDown={this.onKeyDown}
+                        onKeyPress={this.onKeyPress}
                     >
                         {this.renderInput()}
                     </div>
-                    {this.renderError()}
-                    {this.renderCapsLock()}
                 </div>
+                {this.renderError()}
+                {this.renderCapsLock()}
             </div>
         )
     }
