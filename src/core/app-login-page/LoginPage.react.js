@@ -7,6 +7,8 @@ import withClientInfo from '../fe-client-info/withClientInfo'
 import { ResponsiveFrontPage } from '../../react/containers/layout/ResponsiveFrontPage.react'
 import LoginForm from '../../react/components/onboarding/forms/LoginForm.react'
 
+import { FormHeader } from '../../ui/form'
+
 const enhance = withClientInfo(client => ({
     mobile: client.isMobile(),
     cordova: client.isCordova()
@@ -24,19 +26,34 @@ class LoginPage extends React.PureComponent {
     }
 
     onSubmit = async data => {
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(data)
+                window.location.href = '/'
+                resolve()
+            }, 500)
+        })
 
+        return {
+            success: true
+        }
+    }
+
+    onEmailChange = email => {
+        this.setState({ email })
     }
 
     renderLoginForm = () => {
         const header = (
-            <div>
-                Login
-            </div>
+            <FormHeader>
+                Log In
+            </FormHeader>
         )
         return (
             <LoginForm
                 preFilledFormValues={{ email: this.state.email }}
                 header={header}
+                onEmailChange={this.onEmailChange}
                 onSubmit={this.onSubmit}
             />
         )
