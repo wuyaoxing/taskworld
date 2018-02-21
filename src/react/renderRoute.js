@@ -1,14 +1,14 @@
 import _ from 'lodash'
 import React from 'react'
 
-import RootRouteRedirector from '../core/fe-routes/RootRouteRedirector.react'
+import RootRouteRedirector from '../core/app-routes/RootRouteRedirector.react'
 import ProjectListPage from './components/projects/project-list/ProjectListPage.react'
 import MemberPage from './components/people/MemberPage.react'
 import OhNoScreen from './components/misc/OhNoScreen.react'
 
 import TestPage from '../ui/TestPage'
 
-import { routes } from '../core/fe-routes/routes'
+import { routes } from '../core/app-routes/routes'
 
 export const renderers = {
     root: component(RootRouteRedirector),

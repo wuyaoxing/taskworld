@@ -33,7 +33,7 @@ const loadStartApp = () => new Promise(resolve => {
                 startApp(options)
             })
         }, 'app-start-app')
-    }, 2000)
+    }, 500)
 })
 
 export async function main() {

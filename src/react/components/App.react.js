@@ -2,15 +2,13 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { compose, lifecycle } from 'recompose'
 
-import AppLayout from '../../core/fe-app-layout/AppLayout.react'
+import AppLayout from '../../core/app-layout/AppLayout.react'
 import MainLayoutContainer from '../containers/layout/MainLayoutContainer.react'
 
-import history from '../../core/app-frontend-globals/history'
-import { router } from '../../core/fe-routes/routes'
+import history from '../../core/frontend-globals/history'
+import { router, getRouteSectionName } from '../../core/app-routes/routes'
 import renderRoute from '../renderRoute'
 import LoadingScreen from './misc/LoadingScreen.react'
-
-import { getRouteSectionName } from '../../core/fe-routes/routes'
 
 import createLocalStorage from '../../core/local-storage/createLocalStorage'
 

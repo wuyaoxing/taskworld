@@ -3,7 +3,7 @@ import './LoginPage.less'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import withClientInfo from '../fe-client-info/withClientInfo'
+import withClientInfo from '../app-client-info/withClientInfo'
 import { ResponsiveFrontPage } from '../../react/containers/layout/ResponsiveFrontPage.react'
 import LoginForm from '../../react/components/onboarding/forms/LoginForm.react'
 

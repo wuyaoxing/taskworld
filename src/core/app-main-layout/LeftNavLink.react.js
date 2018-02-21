@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import RouteLink from '../fe-routes/RouteLink.react'
+import RouteLink from '../app-routes/RouteLink.react'
 
 export default class LeftNavLink extends React.Component {
     static propTypes = {

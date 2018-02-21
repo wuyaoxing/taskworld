@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import withClientInfo from '../../../core/fe-client-info/withClientInfo'
+import withClientInfo from '../../../core/app-client-info/withClientInfo'
 
 const enhance = withClientInfo(client => ({
     mobile: client.isMobile()
