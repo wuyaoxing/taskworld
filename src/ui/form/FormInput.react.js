@@ -1,3 +1,5 @@
+import './FormInput.less'
+
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
