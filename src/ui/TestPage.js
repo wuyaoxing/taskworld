@@ -1,17 +1,32 @@
 import React from 'react'
 
-import { Divider, Tooltip, Button, Input } from '../ui'
+import { Divider, Tooltip, Button, Input, Text } from '../ui'
 
 export default class TestPage extends React.Component {
     render() {
         return (
             <div>
-                <h2>TestPage</h2>
-                <Divider style={{ background: '#333' }} />
+                <Text color="TEAL" size="XL">TestPage</Text>
+                <Divider style={{ background: '#666' }} />
+
+                <h4>Text</h4>
+                <p>
+                    <Text color="TEAL" size="XXL">
+                        知
+                    </Text>
+                    <Text color="BLUE" size="XL">其</Text>
+                    <Text color="GREEN" size="L">不</Text>
+                    <Text color="AMBER" size="M">可</Text>
+                    <Text color="RED" size="S">奈</Text>
+                    <Text color="LIGHT_GRAY" size="XS">何</Text>
+                    <Text color="GRAY" size="XXS">而</Text>
+                    <Text color="DARK_GRAY">安</Text>
+                    <Text color="TRANSPARENT">之</Text>
+                </p>
 
                 <h4>Input</h4>
                 <p>
-                    <Input type="number"></Input>
+                    <Input type="number" />
                 </p>
 
                 <h4>Button</h4>

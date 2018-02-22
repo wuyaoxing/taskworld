@@ -6,6 +6,7 @@ import Tooltip, { TooltipLayer } from './tooltip'
 
 import Button from './button'
 import Input from './input'
+import Text from './text'
 
 export {
     Loading,
@@ -15,5 +16,6 @@ export {
     Tooltip,
     TooltipLayer,
     Button,
-    Input
+    Input,
+    Text
 }
