@@ -7,6 +7,8 @@ import Tooltip, { TooltipLayer } from './tooltip'
 import Button from './button'
 import Input from './input'
 import Text from './text'
+import Checkbox from './checkbox'
+import Radio from './radio'
 
 export {
     Loading,
@@ -17,5 +19,7 @@ export {
     TooltipLayer,
     Button,
     Input,
-    Text
+    Text,
+    Checkbox,
+    Radio
 }

@@ -1,14 +1,44 @@
 import React from 'react'
 
-import { Divider, Tooltip, Button, Input, Text } from '../ui'
+import { Divider, Tooltip, Button, Input, Text, Checkbox, Radio } from '../ui'
 
 export default class TestPage extends React.Component {
+    state = {
+        checked: true
+    }
+
+    checkboxChange = e => {
+        this.setState({ checked: !this.state.checked })
+    }
+
+    radioChange = e => {
+        this.setState({ checked: !this.state.checked })
+    }
+
     render() {
         return (
             <div>
                 <Text color="TEAL" size="XL">TestPage</Text>
                 <Divider style={{ background: '#666' }} />
 
+                <h4>Radio</h4>
+                <Radio
+                    checked={this.state.checked}
+                    onSelect={this.radioChange}
+                >Radio1</Radio>
+                <Radio
+                    checked={!this.state.checked}
+                    onSelect={this.radioChange}
+                >Radio2</Radio>
+
+                <h4>Checkbox</h4>
+                <Checkbox
+                    size={18}
+                    checked={this.state.checked}
+                    onChange={this.checkboxChange}
+                >
+                    Checkbox
+                </Checkbox>
                 <h4>Text</h4>
                 <p>
                     <Text color="TEAL" size="XXL">

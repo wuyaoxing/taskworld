@@ -46,7 +46,7 @@ export default class Checkbox extends React.PureComponent {
                     {this.props.checked && <Icon className="ui-checkbox__check"
                         name="check-mark-bold"
                         style={{ fontSize: this.props.size - 3 }}
-                     />}
+                    />}
                 </div>
                 <div className="ui-checkbox__label" style={{ marginLeft: this.props.size < 18 ? 5 : 10 }}>
                     {this.props.children}
