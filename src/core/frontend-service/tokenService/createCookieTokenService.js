@@ -1,8 +1,9 @@
-import Cookies from 'js-cookies'
-const createCookieTokenService = (cookiekey = 'FE_ACCESS_TOKEN') => {
+import Cookies from 'js-cookie'
+
+const createCookieTokenService = (cookieKey = 'APP_ACCESS_TOKEN') => {
     return {
         saveToken(token) {
-            Cookie.set(cookieKey, token, { expires: 365, path: '/' })
+            Cookies.set(cookieKey, token, { expires: 365, path: '/' })
         },
         getToken() {
             return Cookies.get(cookieKey) || null

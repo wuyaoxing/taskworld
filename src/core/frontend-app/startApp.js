@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import { tokenService } from '../frontend-service'
 import * as Pages from './Pages'
 import { getPathname, hrefForPathname } from '../frontend-globals/PathnameRouting'
 
@@ -12,7 +13,6 @@ export async function startApp({ loadingScreen }) {
             render
         })
     } catch (e) {
-        console.log(e)
         return Pages.showLoginPage()
     } finally {
         loadingScreen.remove()
@@ -21,6 +21,7 @@ export async function startApp({ loadingScreen }) {
 
 function resolveRoute(pathname) {
     const pathnameMatchs = url => pathname === url || pathname === `${url}/`
+
     if (pathnameMatchs('/login')) {
         return Pages.showLoginPage
     }
@@ -34,9 +35,11 @@ function resolveRoute(pathname) {
     return Pages.showNotFoundPage
 }
 
-function handleFrontPage() {
-    const workspaceName = 'me'
-    return redirectToWorkspace(workspaceName)
+function handleFrontPage(env) {
+    return authenticateAndInitServices(env, ({ userInfo }) => {
+        const workspaceName = 'me'
+        redirectToWorkspace(workspaceName)
+    })
 }
 
 function redirectToWorkspace(workspaceName) {
@@ -55,11 +58,14 @@ function enterWorkspaceByName(workspaceName) {
     }
     return env => {
         const { loadingScreen } = env
-        return enterWorkspace({
-            workspaceName,
-            accessToken,
-            userId,
-            onStatus: status => { loadingScreen.update({ status }) }
+        return authenticateAndInitServices(env, async ({ accessToken, userId }) => {
+            const result = await enterWorkspace({
+                workspaceName,
+                accessToken,
+                userId,
+                onStatus: status => { loadingScreen.update({ status }) }
+            })
+            return result
         })
     }
 }
@@ -81,6 +87,34 @@ function enterWorkspace({
             }))
         }, 'app')
     })
+}
+
+function authenticateAndInitServices({ loadingScreen }, handler) {
+    const accessToken = tokenService.getToken()
+    if(!accessToken) {
+        if(shouldRedirectAfterLogin()) return Pages.showLoginPage()
+        const pathname = getPathname()
+        const workspaceName = getWorkspaceName(pathname)
+        const base = hrefForPathname('/login')
+        const queryParam = workspaceName
+            ? `${base.includes('?') ? '&' : '?'}workspace=${workspaceName}`
+            : ''
+        window.location.href = base + queryParam + window.location.hash
+        return
+    }
+
+    loadingScreen.update({ status: 'Loading user info...' })
+    const userInfo = {
+        id: '1',
+        name: 'userName',
+        sex: 'man'
+    }
+
+    return handler({ accessToken, userInfo })
+}
+
+function shouldRedirectAfterLogin() {
+    return getPathname() === '/redirect'
 }
 
 function render(component, props) {
