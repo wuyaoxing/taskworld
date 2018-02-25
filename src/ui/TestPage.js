@@ -1,10 +1,26 @@
 import React from 'react'
 
+import eventLog from '../core/frontend-globals/eventLog'
+
 import { Divider, Tooltip, Button, Input, Text, Checkbox, Radio } from '../ui'
 
 export default class TestPage extends React.Component {
     state = {
         checked: true
+    }
+
+    componentWillMount() {
+        eventLog('page:testPage', 'test:eventLog', {
+            time: new Date(),
+            state: 'componentWillMount'
+        })
+    }
+
+    componentWillUnmount() {
+        eventLog('page:testPage', 'test:eventLog', {
+            time: new Date(),
+            state: 'componentWillUnMount'
+        })
     }
 
     checkboxChange = e => {
