@@ -1,0 +1,76 @@
+.ui-switch {
+  position: relative;
+  display: table;
+  width: 60px;
+  height: 22px;
+  border-radius: 14px;
+  background: #696f7a;
+  color: #fff;
+  cursor: pointer;
+}
+.ui-switch .\--on-label {
+  padding-left: 10px;
+  vertical-align: middle;
+  text-align: left;
+  text-transform: capitalize;
+  user-select: none;
+  -webkit-touch-callout: none !important /* Safari for iOS */;
+  -webkit-user-select: none /* Chrome, Safari for Mac, Opera */;
+  -moz-user-select: none /* Firefox */;
+  -ms-user-select: none /* Internet Explorer, Edge */;
+  -webkit-user-drag: none;
+}
+.ui-switch .\--off-label {
+  padding-right: 10px;
+  vertical-align: middle;
+  text-align: right;
+  text-transform: capitalize;
+}
+.ui-switch .\--handler {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.5);
+  transition: left 0.1s ease-in-out, background-color 0.2s linear;
+}
+.ui-switch.\--on {
+  background: #27b6ba;
+}
+.ui-switch.\--on .\--handler {
+  left: 38px;
+}
+.ui-switch.\--on .\--on-label {
+  display: table-cell;
+}
+.ui-switch.\--on .\--off-label {
+  display: none;
+}
+.ui-switch.\--off .\--handler {
+  left: 3px;
+}
+.ui-switch.\--off .\--on-label {
+  display: none;
+}
+.ui-switch.\--off .\--off-label {
+  display: table-cell;
+}
+.ui-switch.\--disabled {
+  background: #d4d6db;
+  color: #8d919a;
+  cursor: default;
+}
+.ui-switch.\--disabled .\--handler {
+  background: #e6e8ec;
+  box-shadow: none;
+}
+.ui-switch__placeholder {
+  position: relative;
+  display: table;
+}
+.ui-switch__loading-placeholder {
+  padding: 4px 0 0 10px;
+}
