@@ -2,12 +2,11 @@ import React from 'react'
 
 import eventLog from '../core/frontend-globals/eventLog'
 
-import { Divider, Tooltip, Button, Input, Text, Checkbox, Radio, Switch } from '../ui'
+import { Divider, Tooltip, Button, Input, Text, Checkbox, Radio, Switch, Star } from '../ui'
 
 export default class TestPage extends React.Component {
     state = {
-        checked: true,
-        switchState: false
+        checked: true
     }
 
     componentWillMount() {
@@ -34,7 +33,7 @@ export default class TestPage extends React.Component {
 
     onSwitchChange = (state, e) => {
         this.setState({
-            switchState: state
+            checked: state
         })
     }
 
@@ -44,9 +43,11 @@ export default class TestPage extends React.Component {
                 <Text color="TEAL" size="XL">TestPage</Text>
                 <Divider style={{ background: '#666' }} />
 
+                <h4>Star</h4>
+                <Star active={this.state.checked} />
                 <h4>Switch</h4>
                 <Switch
-                    state={this.state.switchState}
+                    state={this.state.checked}
                     onStateChange={this.onSwitchChange}
                 />
 

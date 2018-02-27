@@ -10,6 +10,7 @@ import Text from './text'
 import Checkbox from './checkbox'
 import Radio from './radio'
 import Switch from './switch'
+import Star from './star'
 
 export {
     Loading,
@@ -23,5 +24,6 @@ export {
     Text,
     Checkbox,
     Radio,
-    Switch
+    Switch,
+    Star
 }
