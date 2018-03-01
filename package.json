@@ -2,8 +2,10 @@
   "name": "react-best-practices",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "bson-objectid": "^1.2.2",
     "classnames": "^2.2.5",
     "events": "^2.0.0",

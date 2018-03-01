@@ -1,23 +1,25 @@
 const app = require('express')()
 const http = require('http').Server(app)
-const io = require('socket.io')(http)
-const port = process.env.PORT || 3000
+
+const port = process.env.PORT || 4000
+
+const RestApi = require('./endpoints/rest')
+
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use((req, res, next) => {
     console.log(new Date(), '[REST API]', req.method, req.path, req.body)
     next()
 })
 
-app.get('/api/user', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+app.get('/', (req, res) => {
+    res.send({ welcome: new Date() })
 })
 
-io.on('connection', socket => {
-    console.log('connected')
-    socket.on('receiveMessage', message => {
-        io.emit('updateMessage', message)
-    })
-})
+RestApi.setupRestEndpoints(app)
 
 console.log('Starting server ..')
 http.listen(port, () => {

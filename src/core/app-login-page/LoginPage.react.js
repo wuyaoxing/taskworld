@@ -11,7 +11,7 @@ import LoginForm from '../../react/components/onboarding/forms/LoginForm.react'
 
 import { FormHeader } from '../../ui/form'
 
-import { tokenService } from '../frontend-service'
+import { authenticationService } from '../frontend-service'
 
 const enhance = withClientInfo(client => ({
     mobile: client.isMobile(),
@@ -30,18 +30,27 @@ class LoginPage extends React.PureComponent {
     }
 
     onSubmit = async data => {
-        await new Promise((resolve, reject) => {
-            setTimeout(() => {
-                eventLog(
-                    'page:login',
-                    'login:success',
-                    data
-                )
-                tokenService.saveToken(new Date().getTime())
-                window.location.href = '/'
-                resolve()
-            }, 500)
+        const { failure, result } = await authenticationService.login({
+            email: data.email,
+            password: data.password
         })
+
+        if(failure) {
+            eventLog(
+                'page:login',
+                'login:fail',
+                failure
+            )
+            return
+        }
+
+        eventLog(
+            'page:login',
+            'login:success',
+            result
+        )
+
+        window.location.href = '/' + window.location.hash
 
         return {
             success: true
