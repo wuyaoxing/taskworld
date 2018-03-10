@@ -5,7 +5,15 @@ const port = process.env.PORT || 4000
 
 const RestApi = require('./endpoints/rest')
 
+const Cors = require('cors')
+
 const bodyParser = require('body-parser')
+
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200
+}
+app.use(Cors(corsOptions))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))

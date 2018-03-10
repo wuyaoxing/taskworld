@@ -8,6 +8,7 @@
     "body-parser": "^1.18.2",
     "bson-objectid": "^1.2.2",
     "classnames": "^2.2.5",
+    "cors": "^2.8.4",
     "events": "^2.0.0",
     "history": "^4.7.2",
     "invariant": "^2.2.2",
