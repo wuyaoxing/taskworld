@@ -30,11 +30,26 @@ export const authenticationService = {
             }
         ).then(response => {
             console.log('api/auth:success', response)
-            tokenService.saveToken(response.token)
+            tokenService.saveToken(response.data.token)
             return { result: response }
         }).catch(error => {
             console.log('api/auth:fial', error)
             return { failure: error }
         })
+    },
+
+    async authenticateWithToken() {
+        const apiUrl = ''
+        const response = await authenticatedRestClient.get(`${apiUrl}/users/me`)
+        return converRestAPIUserToLegacyUser(response.data.data)
+
+        function converRestAPIUserToLegacyUser(item) {
+            return {
+                _id: item.id,
+                display_name: item.attributes.display_name,
+                email: item.attributes.email,
+                created_at: Date.parse(item.attributes.created_at)
+            }
+        }
     }
 }

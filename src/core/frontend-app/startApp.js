@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { tokenService } from '../frontend-service'
+import { tokenService, authenticationService } from '../frontend-service'
 import * as Pages from './Pages'
 import { getPathname, hrefForPathname } from '../frontend-globals/PathnameRouting'
 
@@ -58,11 +58,11 @@ function enterWorkspaceByName(workspaceName) {
     }
     return env => {
         const { loadingScreen } = env
-        return authenticateAndInitServices(env, async ({ accessToken, userId }) => {
+        return authenticateAndInitServices(env, async ({ accessToken, userInfo }) => {
             const result = await enterWorkspace({
                 workspaceName,
                 accessToken,
-                userId,
+                userId: userInfo._id,
                 onStatus: status => { loadingScreen.update({ status }) }
             })
             return result
@@ -89,7 +89,7 @@ function enterWorkspace({
     })
 }
 
-function authenticateAndInitServices({ loadingScreen }, handler) {
+async function authenticateAndInitServices({ loadingScreen }, handler) {
     const accessToken = tokenService.getToken()
     if(!accessToken) {
         if(shouldRedirectAfterLogin()) return Pages.showLoginPage()
@@ -104,11 +104,7 @@ function authenticateAndInitServices({ loadingScreen }, handler) {
     }
 
     loadingScreen.update({ status: 'Loading user info...' })
-    const userInfo = {
-        id: '1',
-        name: 'userName',
-        sex: 'man'
-    }
+    const userInfo = await authenticationService.authenticateWithToken()
 
     return handler({ accessToken, userInfo })
 }
