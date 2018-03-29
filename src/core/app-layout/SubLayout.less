@@ -1,0 +1,46 @@
+.app-sub-layout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.app-sub-layout__header {
+  position: relative;
+  z-index: 2;
+  -ms-flex: none;
+  flex: none;
+}
+.app-sub-layout__content {
+  position: relative;
+  z-index: 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  overflow: auto;
+  contain: strict;
+  -webkit-overflow-scrolling: touch;
+}
+.app-sub-layout__content::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background: transparent;
+}
+.app-sub-layout__content::-webkit-scrollbar-track {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background: #f3f4f5;
+}
+.app-sub-layout__content::-webkit-scrollbar-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  background: #b0b4bb;
+}
+.app-sub-layout__content::-webkit-scrollbar-thumb:hover {
+  background: #c1c4cb;
+}
