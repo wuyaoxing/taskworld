@@ -5,6 +5,9 @@ const ROUTE_DEFINITION = {
     projects: {
         projects: {
             route: '/projects'
+        },
+        project: {
+            route: '/project/:projectId'
         }
     },
     members: {

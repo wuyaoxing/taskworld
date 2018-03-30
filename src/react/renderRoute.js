@@ -6,6 +6,8 @@ import ProjectListPage from './components/projects/project-list/ProjectListPage.
 import MemberPage from './components/people/MemberPage.react'
 import OhNoScreen from './components/misc/OhNoScreen.react'
 
+import ProjectPage from './components/projects/ProjectPage.react'
+
 import TestPage from '../ui/TestPage'
 
 import { routes } from '../core/app-routes/routes'
@@ -13,6 +15,7 @@ import { routes } from '../core/app-routes/routes'
 export const renderers = {
     root: component(RootRouteRedirector),
     projects: component(ProjectListPage),
+    project: component(ProjectPage),
     members: component(MemberPage),
     error404: component(OhNoScreen, { message: 'Page Not Found'}),
     test: component(TestPage)
