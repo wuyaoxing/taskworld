@@ -2,23 +2,33 @@ import _ from 'lodash'
 import React from 'react'
 
 import RootRouteRedirector from '../core/app-routes/RootRouteRedirector.react'
-import ProjectListPage from './components/projects/project-list/ProjectListPage.react'
-import MemberPage from './components/people/MemberPage.react'
-import OhNoScreen from './components/misc/OhNoScreen.react'
+// import ProjectListPage from './components/projects/project-list/ProjectListPage.react'
+// import MemberPage from './components/people/MemberPage.react'
+// import OhNoScreen from './components/misc/OhNoScreen.react'
 
-import ProjectPage from './components/projects/ProjectPage.react'
+// import ProjectPage from './components/projects/ProjectPage.react'
 
-import TestPage from '../ui/TestPage'
+// import TestPage from '../ui/TestPage'
 
 import { routes } from '../core/app-routes/routes'
 
+import lazyRouteRenderer from './lazyRouteRenderer'
+
 export const renderers = {
     root: component(RootRouteRedirector),
-    projects: component(ProjectListPage),
-    project: component(ProjectPage),
-    members: component(MemberPage),
-    error404: component(OhNoScreen, { message: 'Page Not Found'}),
-    test: component(TestPage)
+    projects: asyncComponent(() => import(/* webpackChunkName: "projects-page" */ './components/projects/project-list/ProjectListPage.react')),
+    project: asyncComponent(() => import(/* webpackChunkName: "project-page" */ './components/projects/ProjectPage.react')),
+    members: asyncComponent(() => import(/* webpackChunkName: "member-page" */ './components/people/MemberPage.react')),
+    // error404: component(OhNoScreen, { message: 'Page Not Found'}),
+    error404: asyncComponent(() => import(/* webpackChunkName: "error-404-page" */ './components/misc/OhNoScreen.react'), { message: 'Page Not Found'}),
+    // test: component(TestPage),
+    // test: component(lazyRouteRenderer(() => import(/* webpackChunkName: "test-page" */ '../ui/TestPage')))
+    test: asyncComponent(() => import(/* webpackChunkName: "test-page" */ '../ui/TestPage'))
+}
+
+function asyncComponent(asyncComponent, props = {}) {
+    const Component = lazyRouteRenderer(asyncComponent)
+    return component(Component, props)
 }
 
 function component(Component, props = {}) {
