@@ -20,9 +20,18 @@ reduxStore.dispatch({
 })
 console.log(3, reduxStore.getState())
 
+async function awaitFunc() {
+    await new Promise(resolve => {
+        setTimeout(() => {
+            resolve()
+        }, 500)
+    })
+}
+
 export async function launchApp({ userId, workspaceName, accessToken }) {
     const connectElement = element => (
         <Provider store={reduxStore}>{element}</Provider>
     )
     ReactDOM.render(connectElement(<App />), document.getElementById('root'))
+    await awaitFunc()
 }

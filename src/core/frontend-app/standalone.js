@@ -27,12 +27,12 @@ const loadingScreen = createLoadingScreen()
 
 const loadStartApp = () => new Promise(resolve => {
     setTimeout(() => {
-        require.ensure([], () => {
+        import(/* webpackChunkName: "app-start-app" */ './startApp').then(module => {
             resolve(options => {
-                const { startApp } = require('./startApp')
+                const { startApp } = module
                 startApp(options)
             })
-        }, 'app-start-app')
+        })
     }, 500)
 })
 

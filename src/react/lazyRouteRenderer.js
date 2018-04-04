@@ -7,14 +7,11 @@ const asyncComponent = loadComponent =>
         }
 
         componentWillMount() {
-            if (this.hasLoadedComponent()) {
-                return
-            }
+            if (this.hasLoadedComponent()) return
 
             loadComponent()
                 .then(module => module.default)
                 .then(Component => {
-                    console.log(Component, this.state.Component)
                     this.setState({ Component })
                 })
                 .catch(err => {

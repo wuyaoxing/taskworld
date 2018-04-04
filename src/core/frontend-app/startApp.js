@@ -77,16 +77,16 @@ function enterWorkspace({
     onStatus
 }) {
     onStatus('Loading workspace data……')
-    return new Promise(resolve => {
-        require.ensure([ ], () => {
-            const AppLauncher = require('./AppLauncher')
-            resolve(AppLauncher.launchApp({
+    return import(/* webpackChunkName: "app" */ './AppLauncher').then(
+        module => {
+            const AppLauncher = module
+            return AppLauncher.launchApp({
                 accessToken,
                 userId,
                 workspaceName
-            }))
-        }, 'app')
-    })
+            })
+        }
+    )
 }
 
 async function authenticateAndInitServices({ loadingScreen }, handler) {
