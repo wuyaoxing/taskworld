@@ -40,11 +40,11 @@ class App extends React.PureComponent {
     }
 
     renderHeader = () => {
-        return <h1>header</h1>
+        return <h1>Talk is cheap. Show me the code.</h1>
     }
 
     renderFooter = () => {
-        return <h1>footer</h1>
+        return <h6>有时候写着写着就不开心了~~~</h6>
     }
 
     renderAppLayout = () => {
