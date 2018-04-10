@@ -2,7 +2,18 @@ import React from 'react'
 
 import eventLog from '../core/frontend-globals/eventLog'
 
-import { Divider, Tooltip, Button, Input, Text, Checkbox, Radio, Switch, Star } from '../ui'
+import {
+    Divider,
+    Tooltip,
+    Button,
+    Input,
+    Text,
+    Checkbox,
+    Radio,
+    Switch,
+    Star,
+    Collapse
+} from '../ui'
 
 export default class TestPage extends React.Component {
     state = {
@@ -40,8 +51,22 @@ export default class TestPage extends React.Component {
     render() {
         return (
             <div>
-                <Text color="TEAL" size="XL">TestPage</Text>
+                <Text color="TEAL" size="XL">
+                    TestPage
+                </Text>
                 <Divider style={{ background: '#666' }} />
+
+                <h4>Collapse</h4>
+                {[1, 2, 3, 4].map(item => (
+                    <Collapse
+                        header={`header${item}`}
+                        className="test-page-collapse"
+                        expandedByDefault={item % 2 === 0}
+                        key={item}
+                    >
+                        Collapse{item}
+                    </Collapse>
+                ))}
 
                 <h4>Star</h4>
                 <Star active={this.state.checked} />
@@ -52,14 +77,15 @@ export default class TestPage extends React.Component {
                 />
 
                 <h4>Radio</h4>
-                <Radio
-                    checked={this.state.checked}
-                    onSelect={this.radioChange}
-                >Radio1</Radio>
+                <Radio checked={this.state.checked} onSelect={this.radioChange}>
+                    Radio1
+                </Radio>
                 <Radio
                     checked={!this.state.checked}
                     onSelect={this.radioChange}
-                >Radio2</Radio>
+                >
+                    Radio2
+                </Radio>
 
                 <h4>Checkbox</h4>
                 <Checkbox
@@ -74,12 +100,24 @@ export default class TestPage extends React.Component {
                     <Text color="TEAL" size="XXL">
                         知
                     </Text>
-                    <Text color="BLUE" size="XL">其</Text>
-                    <Text color="GREEN" size="L">不</Text>
-                    <Text color="AMBER" size="M">可</Text>
-                    <Text color="RED" size="S">奈</Text>
-                    <Text color="LIGHT_GRAY" size="XS">何</Text>
-                    <Text color="GRAY" size="XXS">而</Text>
+                    <Text color="BLUE" size="XL">
+                        其
+                    </Text>
+                    <Text color="GREEN" size="L">
+                        不
+                    </Text>
+                    <Text color="AMBER" size="M">
+                        可
+                    </Text>
+                    <Text color="RED" size="S">
+                        奈
+                    </Text>
+                    <Text color="LIGHT_GRAY" size="XS">
+                        何
+                    </Text>
+                    <Text color="GRAY" size="XXS">
+                        而
+                    </Text>
                     <Text color="DARK_GRAY">安</Text>
                     <Text color="TRANSPARENT">之</Text>
                 </p>

@@ -12,6 +12,8 @@ import Radio from './radio'
 import Switch from './switch'
 import Star from './star'
 
+import Collapse from './collapse'
+
 export {
     Loading,
     Link,
@@ -25,5 +27,7 @@ export {
     Checkbox,
     Radio,
     Switch,
-    Star
+    Star,
+
+    Collapse
 }
