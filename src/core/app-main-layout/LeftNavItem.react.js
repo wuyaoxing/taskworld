@@ -9,6 +9,7 @@ import { Icon } from '../../ui'
 export default class LeftNavItem extends React.Component {
     static propTypes = {
         iconName: PropTypes.string.isRequired,
+        tooltip: PropTypes.node,
         active: PropTypes.bool
     }
 
@@ -25,6 +26,11 @@ export default class LeftNavItem extends React.Component {
         const className = classNames('app-left-nav-item', {
             '--active': this.props.active
         })
-        return <div className={className}>{this.renderIcon()}</div>
+        return (
+            <div className={className}>
+                {this.renderIcon()}
+                {this.props.tooltip}
+            </div>
+        )
     }
 }

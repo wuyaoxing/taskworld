@@ -7,6 +7,8 @@ import React from 'react'
 import LeftNavLink from './LeftNavLink.react'
 import LeftNavItem from './LeftNavItem.react'
 
+import { Tooltip } from '../../ui'
+
 export function getNavigationItems() {
     return [
         {
@@ -32,6 +34,9 @@ export default class LeftNav extends React.Component {
         className: PropTypes.string.isRequired,
         currentSection: PropTypes.string.isRequired
     }
+
+    renderTooltip = item => <Tooltip position="right">{item.title}</Tooltip>
+
     renderMenuItems = items =>
         items.map((item, index) => {
             const Component = item.component || LeftNavItem
@@ -45,11 +50,13 @@ export default class LeftNav extends React.Component {
                 >
                     <Component
                         iconName={item.icon}
+                        tooltip={this.renderTooltip(item)}
                         active={this.props.currentSection === item.route}
                     />
                 </LeftNavLink>
             )
         })
+
     render() {
         const items = getNavigationItems()
         return (
