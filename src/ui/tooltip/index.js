@@ -6,12 +6,16 @@ import ReactDOM from 'react-dom'
 
 const style = (el, styles) => {
     console.log(el, styles)
-    if(el.length) {
+    if (el.length) {
         el.forEach(e => {
-            Object.keys(styles).forEach(name => (e.style[name] = styles[name]))
+            Object.keys(styles).forEach(
+                name => (e.style[name] = styles[name] + 'px')
+            )
         })
-    }else {
-        Object.keys(styles).forEach(name => (el.style[name] = styles[name]))
+    } else {
+        Object.keys(styles).forEach(
+            name => (el.style[name] = styles[name] + 'px')
+        )
     }
 }
 
@@ -85,6 +89,7 @@ export default class Tooltip extends React.Component {
             }
             this.hide()
         }
+        console.log(e, parentRect)
     }
 
     adjustContentPosition = (
@@ -192,7 +197,7 @@ export default class Tooltip extends React.Component {
             currentTooltip = null
         }
         if (this.tooltip) {
-            this.tooltip.classList.add('--visiable')
+            this.tooltip.classList.add('--visible')
             currentTooltip = this
         }
         if (!this.eventListenerAdded) {
@@ -206,7 +211,7 @@ export default class Tooltip extends React.Component {
             currentTooltip = null
         }
         if (this.tooltip) {
-            this.tooltip.classList.remove('--visiable')
+            this.tooltip.classList.remove('--visible')
         }
         if (this.eventListenerAdded) {
             window.removeEventListener('mousemove', this.onMouseMove)
@@ -256,7 +261,7 @@ export default class Tooltip extends React.Component {
     render() {
         return (
             <span
-                className="ui-tooltip"
+                className="ui-tooltip__dummy-element"
                 style={{ display: 'none' }}
                 ref={this.handleTooltipDummyElement}
             />

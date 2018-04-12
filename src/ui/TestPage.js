@@ -56,6 +56,15 @@ export default class TestPage extends React.Component {
                 </Text>
                 <Divider style={{ background: '#666' }} />
 
+                <h4>Tooltip</h4>
+
+                {[1, 2, 3, 4].map(item => (
+                    <div key={item} style={{position: 'relative', width: '100px'}}>
+                        Tooltip {item}
+                        <Tooltip position="right">dcvdvdvdvdvd {item}</Tooltip>
+                    </div>
+                ))}
+
                 <h4>Collapse</h4>
                 {[1, 2, 3, 4].map(item => (
                     <Collapse
@@ -165,11 +174,6 @@ export default class TestPage extends React.Component {
                 <Divider size="L" style={{ background: '#333' }} />
                 <Divider size="XL" style={{ background: '#333' }} />
                 <Divider size="XXL" style={{ background: '#333' }} />
-                <h4>Tooltip</h4>
-                <div>
-                    Tooltip
-                    <Tooltip position="top">dcvdvdvdvdvd</Tooltip>
-                </div>
             </div>
         )
     }
