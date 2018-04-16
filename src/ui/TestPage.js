@@ -15,6 +15,8 @@ import {
     Collapse
 } from '../ui'
 
+import BodyClass from '../react/components/misc/BodyClass.react'
+
 export default class TestPage extends React.Component {
     state = {
         checked: true
@@ -55,6 +57,7 @@ export default class TestPage extends React.Component {
                     TestPage
                 </Text>
                 <Divider style={{ background: '#666' }} />
+                <BodyClass className="--app-test-page__test" />
 
                 <h4>Tooltip</h4>
 
