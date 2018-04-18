@@ -9,6 +9,9 @@ export const renderers = {
     root: asyncComponent(() =>
         import(/* webpackChunkName: "root-page" */ '../core/app-routes/RootRouteRedirector.react')
     ),
+    notifications: asyncComponent(() =>
+        import(/* webpackChunkName: "notifications-page" */ './components/notifications/notificationsPage.react')
+    ),
     projects: asyncComponent(() =>
         import(/* webpackChunkName: "projects-page" */ './components/projects/project-list/ProjectListPage.react')
     ),

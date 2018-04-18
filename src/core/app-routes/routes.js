@@ -2,6 +2,11 @@ import invariant from 'invariant'
 import createRouteMapper from './createRouteMapper'
 
 const ROUTE_DEFINITION = {
+    notifications: {
+        notifications: {
+            route: '/notifications'
+        }
+    },
     projects: {
         projects: {
             route: '/projects'

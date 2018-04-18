@@ -12,6 +12,11 @@ import { Tooltip } from '../../ui'
 export function getNavigationItems() {
     return [
         {
+            route: 'notifications',
+            icon: 'notification',
+            title: 'notifications'
+        },
+        {
             route: 'projects',
             icon: 'project',
             title: 'project'
