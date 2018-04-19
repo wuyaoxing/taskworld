@@ -13,7 +13,19 @@ const ROUTE_DEFINITION = {
         },
         project: {
             route: '/project/:projectId'
-        }
+        },
+        analyticsForProject: {
+            route: '/project/:projectId/analytics'
+        },
+        calendarForProject: {
+            route: '/project/:projectId/calendar'
+        },
+        timelineForProject: {
+            route: '/project/:projectId/timeline'
+        },
+        filesForProject: {
+            route: '/project/:projectId/files'
+        },
     },
     members: {
         members: {
