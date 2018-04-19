@@ -10,13 +10,13 @@ export const renderers = {
         import(/* webpackChunkName: "root-page" */ '../core/app-routes/RootRouteRedirector.react')
     ),
     notifications: asyncComponent(() =>
-        import(/* webpackChunkName: "notifications-page" */ './components/notifications/notificationsPage.react')
+        import(/* webpackChunkName: "notifications-page" */ './components/notifications/NotificationsPage.react')
     ),
     projects: asyncComponent(() =>
-        import(/* webpackChunkName: "projects-page" */ './components/projects/project-list/ProjectListPage.react')
+        import(/* webpackChunkName: "projects-page" */ './components/projects/ProjectsPage.react')
     ),
     project: asyncComponent(() =>
-        import(/* webpackChunkName: "project-page" */ './components/projects/ProjectPage.react')
+        import(/* webpackChunkName: "project-page" */ './components/project/ProjectPage.react')
     ),
     members: asyncComponent(() =>
         import(/* webpackChunkName: "member-page" */ './components/people/MemberPage.react')

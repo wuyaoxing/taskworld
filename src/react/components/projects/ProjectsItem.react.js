@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import * as RouteActions from '../../../action-creators/RouteActions'
+import * as RouteActions from '../../action-creators/RouteActions'
 
-class ProjectListBody extends React.PureComponent {
+class ProjectsBody extends React.PureComponent {
     static propsTypes = {
         project: PropTypes.array.isRequired
     }
@@ -19,13 +19,13 @@ class ProjectListBody extends React.PureComponent {
 
     render() {
         return (
-            <section className="project-list-item">
+            <section className="projects-item">
                 <div onClick={this.onGoToProject}>
-                    <h2>ProjectListItem{this.props.project.title}</h2>
+                    <h2>ProjectsItem{this.props.project.title}</h2>
                 </div>
             </section>
         )
     }
 }
 
-export default ProjectListBody
+export default ProjectsBody

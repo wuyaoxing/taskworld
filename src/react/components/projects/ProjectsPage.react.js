@@ -1,9 +1,9 @@
 import React from 'react'
-import SubHeader from '../../../../core/app-layout/SubHeader.react'
-import SubLayout from '../../../../core/app-layout/SubLayout.react'
-import ProjectListBody from './ProjectListBody.react'
+import SubHeader from '../../../core/app-layout/SubHeader.react'
+import SubLayout from '../../../core/app-layout/SubLayout.react'
+import ProjectsBody from './ProjectsBody.react'
 
-class ProjectListPage extends React.PureComponent {
+class ProjectsPage extends React.PureComponent {
     state = {
         projects: [
             {
@@ -25,7 +25,7 @@ class ProjectListPage extends React.PureComponent {
         return (
             <SubHeader
                 left={<div>Left</div>}
-                center={<div>ProjectListPage</div>}
+                center={<div>ProjectsPage</div>}
                 right={<div>Right</div>}
             />
         )
@@ -33,13 +33,13 @@ class ProjectListPage extends React.PureComponent {
 
     render() {
         return (
-            <section className="app-project-list-page">
+            <section className="app-projects-page">
                 <SubLayout header={this.renderTopBar()}>
-                    <ProjectListBody projects={this.state.projects} />
+                    <ProjectsBody projects={this.state.projects} />
                 </SubLayout>
             </section>
         )
     }
 }
 
-export default ProjectListPage
+export default ProjectsPage
