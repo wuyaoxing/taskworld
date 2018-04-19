@@ -1,22 +1,25 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import SubHeader from '../../../core/app-layout/SubHeader.react'
+
 import SubLayout from '../../../core/app-layout/SubLayout.react'
+import ProjectHeader from './ProjectHeader.react'
 
 class ProjectPage extends React.PureComponent {
-    renderTopBar = () => {
-        return (
-            <SubHeader
-                left={<div>Left</div>}
-                center={<div>ProjectPage</div>}
-                right={<div>Right</div>}
-            />
-        )
+    static propTypes = {
+        contentComponent: PropTypes.func.isRequired,
+        activeTab: PropTypes.string
     }
 
     render() {
+        const Component = this.props.contentComponent
+
         return (
             <section className="app-project-page">
-                <SubLayout header={this.renderTopBar()}><h2>ProjectPage</h2></SubLayout>
+                <SubLayout
+                    header={<ProjectHeader activeTab={this.props.activeTab} />}
+                >
+                    <Component {...this.props} />
+                </SubLayout>
             </section>
         )
     }

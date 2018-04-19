@@ -5,6 +5,8 @@ import { routes } from '../core/app-routes/routes'
 
 import lazyRouteRenderer from './lazyRouteRenderer'
 
+import ProjectTaskPage from './components/project/ProjectTaskPage.react'
+
 export const renderers = {
     root: asyncComponent(() =>
         import(/* webpackChunkName: "root-page" */ '../core/app-routes/RootRouteRedirector.react')
@@ -15,8 +17,10 @@ export const renderers = {
     projects: asyncComponent(() =>
         import(/* webpackChunkName: "projects-page" */ './components/projects/ProjectsPage.react')
     ),
-    project: asyncComponent(() =>
-        import(/* webpackChunkName: "project-page" */ './components/project/ProjectPage.react')
+    project: asyncComponent(
+        () =>
+            import(/* webpackChunkName: "project-page" */ './components/project/ProjectPage.react'),
+        { activeTab: 'tasks', contentComponent: ProjectTaskPage }
     ),
     members: asyncComponent(() =>
         import(/* webpackChunkName: "member-page" */ './components/people/MemberPage.react')
