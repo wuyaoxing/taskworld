@@ -1,7 +1,7 @@
 import { combineReducers, createStore } from 'redux'
 
 const todos = (state = [], action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'ADD_TODO':
             return state.concat([action.text])
         default:
@@ -10,7 +10,7 @@ const todos = (state = [], action) => {
 }
 
 const counter = (state = 0, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case 'INCREMENT':
             return state + 1
         case 'DECREMENT':
@@ -20,10 +20,36 @@ const counter = (state = 0, action) => {
     }
 }
 
+const projects = (
+    state = [
+        {
+            _id: '1',
+            title: '项目1'
+        },
+        {
+            _id: '2',
+            title: '项目2'
+        },
+        {
+            _id: '3',
+            title: '项目3'
+        }
+    ],
+    action
+) => {
+    switch (action.type) {
+        case 'ADD_PROJECT':
+            return state.concat([action.project])
+        default:
+            return state
+    }
+}
+
 export function createApp() {
     const reducer = combineReducers({
         todos,
-        counter
+        counter,
+        projects
     })
     return {
         run() {

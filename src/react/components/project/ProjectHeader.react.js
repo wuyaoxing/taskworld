@@ -6,7 +6,7 @@ import React from 'react'
 import _ from 'lodash'
 
 import SubHeader from '../../../core/app-layout/SubHeader.react'
-import { Icon } from '../../../ui'
+import { Icon, Tooltip } from '../../../ui'
 import { resolveRoute } from './projectLinkUtil'
 
 export const TABS = {
@@ -49,6 +49,13 @@ class ProjectHeader extends React.PureComponent {
         </button>
     )
 
+    renderTitle = () => (
+        <div className="app-project-header__title">
+            {this.props.project.title}
+            <Tooltip position="right">{this.props.project.title}</Tooltip>
+        </div>
+    )
+
     renderTabs = () => {
         const tabs = getTabs()
         return tabs.map(({ tab, text }) => {
@@ -72,10 +79,13 @@ class ProjectHeader extends React.PureComponent {
                 left={
                     <div className="app-project-header__left-section">
                         {this.renderBackButton()}
+                        {this.renderTitle()}
                     </div>
                 }
-                center={<SubHeader.Section>{this.renderTabs()}</SubHeader.Section>}
-                right={<div>Right</div>}
+                center={
+                    <SubHeader.Section>{this.renderTabs()}</SubHeader.Section>
+                }
+                right={<SubHeader.Section>Right</SubHeader.Section>}
             />
         )
     }

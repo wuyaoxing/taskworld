@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { connect } from 'react-redux'
 
 import SubLayout from '../../../core/app-layout/SubLayout.react'
 import ProjectHeader from './ProjectHeader.react'
+
+const mapProject = (state, ownProps) => ({
+    project: state.projects.find(item => item._id === ownProps.projectId)
+})
+
+const enhance = connect(mapProject)
 
 class ProjectPage extends React.PureComponent {
     static propTypes = {
         contentComponent: PropTypes.func.isRequired,
         activeTab: PropTypes.string
-    }
-
-    state = {
-        project: {
-            _id: 1,
-            title: '1'
-        }
     }
 
     render() {
@@ -26,7 +26,7 @@ class ProjectPage extends React.PureComponent {
                     header={
                         <ProjectHeader
                             activeTab={this.props.activeTab}
-                            project={this.state.project}
+                            project={this.props.project}
                         />
                     }
                 >
@@ -37,4 +37,4 @@ class ProjectPage extends React.PureComponent {
     }
 }
 
-export default ProjectPage
+export default enhance(ProjectPage)
