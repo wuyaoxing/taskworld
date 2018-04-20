@@ -5,6 +5,8 @@ import { routes } from '../core/app-routes/routes'
 
 import lazyRouteRenderer from './lazyRouteRenderer'
 
+import ProjectPage from './components/project/ProjectPage.react'
+
 import { TABS as PROJECT_TABS } from './components/project/ProjectHeader.react'
 
 export const renderers = {
@@ -17,56 +19,36 @@ export const renderers = {
     projects: asyncComponent(() =>
         import(/* webpackChunkName: "projects-page" */ './components/projects/ProjectsPage.react')
     ),
-    project: asyncComponent(
-        () =>
-            import(/* webpackChunkName: "project-page" */ './components/project/ProjectPage.react'),
-        {
-            activeTab: PROJECT_TABS.TASKS,
-            contentComponent: asyncComponent(() =>
-                import(/* webpackChunkName: "project-task-page" */ './components/project/ProjectTaskPage.react')
-            )
-        }
-    ),
-    timelineForProject: asyncComponent(
-        () =>
-            import(/* webpackChunkName: "project-page" */ './components/project/ProjectPage.react'),
-        {
-            activeTab: PROJECT_TABS.TIMELINE,
-            contentComponent: asyncComponent(() =>
-                import(/* webpackChunkName: "project-tiemline-page" */ './components/project/ProjectTimelinePage.react')
-            )
-        }
-    ),
-    analyticsForProject: asyncComponent(
-        () =>
-            import(/* webpackChunkName: "project-page" */ './components/project/ProjectPage.react'),
-        {
-            activeTab: PROJECT_TABS.ANALYTICS,
-            contentComponent: asyncComponent(() =>
-                import(/* webpackChunkName: "project-analytics-page" */ './components/project/ProjectAnalyticsPage.react')
-            )
-        }
-    ),
-    calendarForProject: asyncComponent(
-        () =>
-            import(/* webpackChunkName: "project-page" */ './components/project/ProjectPage.react'),
-        {
-            activeTab: PROJECT_TABS.CALENDAR,
-            contentComponent: asyncComponent(() =>
-                import(/* webpackChunkName: "project-calendar-page" */ './components/project/ProjectCalendarPage.react')
-            )
-        }
-    ),
-    filesForProject: asyncComponent(
-        () =>
-            import(/* webpackChunkName: "project-page" */ './components/project/ProjectPage.react'),
-        {
-            activeTab: PROJECT_TABS.FILES,
-            contentComponent: asyncComponent(() =>
-                import(/* webpackChunkName: "project-files-page" */ './components/project/ProjectFilesPage.react')
-            )
-        }
-    ),
+    project: component(ProjectPage, {
+        activeTab: PROJECT_TABS.TASKS,
+        contentComponent: asyncComponent(() =>
+            import(/* webpackChunkName: "project-task-page" */ './components/project/ProjectTaskPage.react')
+        )
+    }),
+    timelineForProject: component(ProjectPage, {
+        activeTab: PROJECT_TABS.TIMELINE,
+        contentComponent: asyncComponent(() =>
+            import(/* webpackChunkName: "project-tiemline-page" */ './components/project/ProjectTimelinePage.react')
+        )
+    }),
+    analyticsForProject: component(ProjectPage, {
+        activeTab: PROJECT_TABS.ANALYTICS,
+        contentComponent: asyncComponent(() =>
+            import(/* webpackChunkName: "project-analytics-page" */ './components/project/ProjectAnalyticsPage.react')
+        )
+    }),
+    calendarForProject: component(ProjectPage, {
+        activeTab: PROJECT_TABS.CALENDAR,
+        contentComponent: asyncComponent(() =>
+            import(/* webpackChunkName: "project-calendar-page" */ './components/project/ProjectCalendarPage.react')
+        )
+    }),
+    filesForProject: component(ProjectPage, {
+        activeTab: PROJECT_TABS.FILES,
+        contentComponent: asyncComponent(() =>
+            import(/* webpackChunkName: "project-files-page" */ './components/project/ProjectFilesPage.react')
+        )
+    }),
     members: asyncComponent(() =>
         import(/* webpackChunkName: "member-page" */ './components/people/MemberPage.react')
     ),
