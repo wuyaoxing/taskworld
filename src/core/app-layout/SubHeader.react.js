@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import RouterLink from '../app-routes/RouteLink.react'
+import RouterLink from 'core/app-routes/RouteLink.react'
 
 export default class SubHeader extends React.Component {
     static propTypes = {

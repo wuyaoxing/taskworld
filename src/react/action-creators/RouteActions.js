@@ -1,7 +1,7 @@
 import { parse } from 'url'
 
-import history from '../../core/frontend-globals/history'
-import { generate } from '../../core/app-routes/routes'
+import history from 'core/frontend-globals/history'
+import { generate } from 'core/app-routes/routes'
 
 export function pushRoute(route) {
     const path = generate(route)

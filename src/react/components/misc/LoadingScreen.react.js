@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Loading } from '../../../ui'
+import { Loading } from 'ui'
 
 export default class LoadingScreen extends React.Component {
     render() {

@@ -3,8 +3,8 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import SubHeader from '../../../core/app-layout/SubHeader.react'
-import SubLayout from '../../../core/app-layout/SubLayout.react'
+import SubHeader from 'core/app-layout/SubHeader.react'
+import SubLayout from 'core/app-layout/SubLayout.react'
 import ProjectsBody from './ProjectsBody.react'
 
 const mapProjects = state => ({

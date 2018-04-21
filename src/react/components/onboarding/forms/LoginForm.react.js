@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { withProps } from 'recompose'
 
-import { Form, FormInput, FormRow } from '../../../../ui/form'
-import { Button } from '../../../../ui'
+import { Form, FormInput, FormRow } from 'ui/form'
+import { Button } from 'ui'
 
 const enhance = withProps({
     googleLoginEnabled: false

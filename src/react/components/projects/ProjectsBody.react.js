@@ -3,7 +3,7 @@ import React from 'react'
 
 import ProjectsItem from './ProjectsItem.react'
 
-import { Collapse } from '../../../ui'
+import { Collapse } from 'ui'
 
 class ProjectsBody extends React.PureComponent {
     static propsTypes = {

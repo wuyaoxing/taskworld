@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import withClientInfo from '../../../core/app-client-info/withClientInfo'
+import withClientInfo from 'core/app-client-info/withClientInfo'
 
 const enhance = withClientInfo(client => ({
     mobile: client.isMobile()
@@ -23,8 +23,8 @@ export class ResponsiveFrontPage extends React.Component {
     renderLogo = () => {
         if (this.props.hideLogo) return null
         const logoPath = this.props.mobile
-            ? require('../../../assets/images/dark-logo.svg')
-            : require('../../../assets/images/logo.svg')
+            ? require('assets/images/dark-logo.svg')
+            : require('assets/images/logo.svg')
         return (
             <img
                 className="app-responsive-front-page__logo"

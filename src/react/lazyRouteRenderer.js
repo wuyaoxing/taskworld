@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Subject } from '../core/utils/rxjs'
+import { Subject } from 'core/utils/rxjs'
 
 import LoadingScreen from './components/misc/LoadingScreen.react'
 

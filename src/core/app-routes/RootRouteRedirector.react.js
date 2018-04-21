@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import LoadingScreen from '../../react/components/misc/LoadingScreen.react'
+import LoadingScreen from 'react/components/misc/LoadingScreen.react'
 
 export default class RootRouteRedirector extends React.Component {
     static propTypes = {

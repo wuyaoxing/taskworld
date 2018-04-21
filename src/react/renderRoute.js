@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import React from 'react'
 
-import { routes } from '../core/app-routes/routes'
+import { routes } from 'core/app-routes/routes'
 
 import lazyRouteRenderer from './lazyRouteRenderer'
 
@@ -11,7 +11,7 @@ import { TABS as PROJECT_TABS } from './components/project/ProjectHeader.react'
 
 export const renderers = {
     root: asyncComponent(() =>
-        import(/* webpackChunkName: "root-page" */ '../core/app-routes/RootRouteRedirector.react')
+        import(/* webpackChunkName: "root-page" */ 'core/app-routes/RootRouteRedirector.react')
     ),
     notifications: asyncComponent(() =>
         import(/* webpackChunkName: "notifications-page" */ './components/notifications/NotificationsPage.react')
@@ -60,7 +60,7 @@ export const renderers = {
     // test: component(TestPage),
     // test: component(lazyRouteRenderer(() => import(/* webpackChunkName: "test-page" */ '../ui/TestPage')))
     test: asyncComponent(() =>
-        import(/* webpackChunkName: "test-page" */ '../ui/TestPage')
+        import(/* webpackChunkName: "test-page" */ 'ui/TestPage')
     )
 }
 

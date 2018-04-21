@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { tokenService, authenticationService } from '../frontend-service'
+import { tokenService, authenticationService } from 'core/frontend-service'
 import * as Pages from './Pages'
-import { getPathname, hrefForPathname } from '../frontend-globals/PathnameRouting'
+import { getPathname, hrefForPathname } from 'core/frontend-globals/PathnameRouting'
 
 export async function startApp({ loadingScreen }) {
     try {

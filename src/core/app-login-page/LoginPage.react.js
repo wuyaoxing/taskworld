@@ -3,15 +3,15 @@ import './LoginPage.less'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import eventLog from '../frontend-globals/eventLog'
+import eventLog from 'core/frontend-globals/eventLog'
 
-import withClientInfo from '../app-client-info/withClientInfo'
-import { ResponsiveFrontPage } from '../../react/containers/layout/ResponsiveFrontPage.react'
-import LoginForm from '../../react/components/onboarding/forms/LoginForm.react'
+import withClientInfo from 'core/app-client-info/withClientInfo'
+import { ResponsiveFrontPage } from 'react/containers/layout/ResponsiveFrontPage.react'
+import LoginForm from 'react/components/onboarding/forms/LoginForm.react'
 
-import { FormHeader } from '../../ui/form'
+import { FormHeader } from 'ui/form'
 
-import { authenticationService } from '../frontend-service'
+import { authenticationService } from 'core/frontend-service'
 
 const enhance = withClientInfo(client => ({
     mobile: client.isMobile(),

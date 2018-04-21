@@ -1,4 +1,4 @@
-import '../../assets/less/index.less'
+import 'assets/less/index.less'
 
 import React from 'react'
 import ReactDOM from 'react-dom'

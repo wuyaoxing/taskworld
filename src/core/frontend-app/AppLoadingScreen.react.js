@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const appLoadingPath = require('../../assets/images/app-loading.png')
+const appLoadingPath = require('assets/images/app-loading.png')
 
 export default class AppLoadingScreen extends React.PureComponent {
     static propTypes = {

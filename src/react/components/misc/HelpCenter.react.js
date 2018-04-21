@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from '../../../ui'
+import { Icon } from 'ui'
 
 export default class HelpCenter extends React.Component {
     render() {

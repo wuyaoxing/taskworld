@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import * as RouteActions from '../../action-creators/RouteActions'
+import * as RouteActions from 'react/action-creators/RouteActions'
 
 class ProjectsBody extends React.PureComponent {
     static propsTypes = {

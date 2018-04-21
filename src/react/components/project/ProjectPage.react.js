@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
 
-import SubLayout from '../../../core/app-layout/SubLayout.react'
+import SubLayout from 'core/app-layout/SubLayout.react'
 import ProjectHeader from './ProjectHeader.react'
 
 const mapProject = (state, ownProps) => ({

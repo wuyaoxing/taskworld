@@ -1,6 +1,6 @@
 import React from 'react'
 
-import eventLog from '../core/frontend-globals/eventLog'
+import eventLog from 'core/frontend-globals/eventLog'
 
 import {
     Divider,
@@ -13,9 +13,9 @@ import {
     Switch,
     Star,
     Collapse
-} from '../ui'
+} from 'ui'
 
-import BodyClass from '../react/components/misc/BodyClass.react'
+import BodyClass from 'react/components/misc/BodyClass.react'
 
 export default class TestPage extends React.Component {
     state = {

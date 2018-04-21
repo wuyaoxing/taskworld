@@ -7,7 +7,7 @@ import React from 'react'
 import LeftNavLink from './LeftNavLink.react'
 import LeftNavItem from './LeftNavItem.react'
 
-import { Tooltip } from '../../ui'
+import { Tooltip } from 'ui'
 
 export function getNavigationItems() {
     return [

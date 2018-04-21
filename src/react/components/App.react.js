@@ -2,17 +2,17 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { compose, lifecycle } from 'recompose'
 
-import AppLayout from '../../core/app-layout/AppLayout.react'
-import MainLayoutContainer from '../containers/layout/MainLayoutContainer.react'
+import AppLayout from 'core/app-layout/AppLayout.react'
+import MainLayoutContainer from 'react/containers/layout/MainLayoutContainer.react'
 
-import history from '../../core/frontend-globals/history'
-import { router, getRouteSectionName } from '../../core/app-routes/routes'
+import history from 'core/frontend-globals/history'
+import { router, getRouteSectionName } from 'core/app-routes/routes'
 import renderRoute from '../renderRoute'
 import LoadingScreen from './misc/LoadingScreen.react'
 
-import createLocalStorage from '../../core/local-storage/createLocalStorage'
+import createLocalStorage from 'core/local-storage/createLocalStorage'
 
-import { TooltipLayer } from '../../ui'
+import { TooltipLayer } from 'ui'
 
 console.log(createLocalStorage('test'))
 

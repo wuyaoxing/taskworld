@@ -8,10 +8,10 @@ import TopNav from './TopNav.react'
 import LeftNav from './LeftNav.react'
 import GlobalAdd from './GlobalAdd.react'
 
-import { Icon } from '../../ui'
-import { DEFAULT_AVATAR_URL } from '../app-users/user'
+import { Icon } from 'ui'
+import { DEFAULT_AVATAR_URL } from 'core/app-users/user'
 
-import withClientInfo from '../app-client-info/withClientInfo'
+import withClientInfo from 'core/app-client-info/withClientInfo'
 
 const enhance = withClientInfo(client => ({
     mobileView: client.isMobile(),

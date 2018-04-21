@@ -4,8 +4,8 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import withClientInfo from '../app-client-info/withClientInfo'
-import { Icon } from '../../ui'
+import withClientInfo from 'core/app-client-info/withClientInfo'
+import { Icon } from 'ui'
 
 const enhance = withClientInfo(client => ({
     mobile: client.isMobile()

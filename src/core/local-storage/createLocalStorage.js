@@ -1,5 +1,5 @@
-import { BehaviorSubject } from '../utils/rxjs'
-import { generateId } from '../object-id'
+import { BehaviorSubject } from 'core/utils/rxjs'
+import { generateId } from 'core/object-id'
 
 function getApplicableStorage(prefix) {
     try{

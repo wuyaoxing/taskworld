@@ -5,8 +5,8 @@ import React from 'react'
 
 import _ from 'lodash'
 
-import SubHeader from '../../../core/app-layout/SubHeader.react'
-import { Icon, Tooltip } from '../../../ui'
+import SubHeader from 'core/app-layout/SubHeader.react'
+import { Icon, Tooltip } from 'ui'
 import { resolveRoute } from './projectLinkUtil'
 
 export const TABS = {

@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { Icon } from '../../ui'
+import { Icon } from 'ui'
 
 export default class LeftNavItem extends React.Component {
     static propTypes = {

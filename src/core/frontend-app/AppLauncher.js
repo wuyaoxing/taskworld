@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 
 import configureApp from './configureApp'
 
-import App from '../../react/components/App.react'
+import App from 'react/components/App.react'
 
 const app = configureApp().run()
 
