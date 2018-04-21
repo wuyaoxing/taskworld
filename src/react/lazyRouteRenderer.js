@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Rx from 'rxjs'
+import { Subject } from '../core/utils/rxjs'
 
 import LoadingScreen from './components/misc/LoadingScreen.react'
 
@@ -35,7 +35,7 @@ export const asyncComponent = loadComponent =>
     }
 
 export default function createRenderer(loadModule) {
-    const finish = new Rx.Subject()
+    const finish = new Subject()
     let requested = false
     let component
 

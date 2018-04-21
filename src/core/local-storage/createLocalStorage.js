@@ -1,4 +1,4 @@
-import Rx from 'rxjs'
+import { BehaviorSubject } from '../utils/rxjs'
 import { generateId } from '../object-id'
 
 function getApplicableStorage(prefix) {
@@ -16,7 +16,7 @@ function getApplicableStorage(prefix) {
 
 export function createLocalStorage(prefix) {
     const storage = getApplicableStorage(prefix)
-    const snapshot = new Rx.BehaviorSubject(fetchAll())
+    const snapshot = new BehaviorSubject(fetchAll())
 
     function getRealKey(_id) {
         return prefix + '_' + _id
