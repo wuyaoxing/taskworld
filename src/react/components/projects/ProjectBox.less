@@ -1,0 +1,196 @@
+
+.app-project-box-content__projects {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+}
+.app-project-box-content__load-more-card {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin: 10px 0 10px 10px;
+  width: 226px;
+  height: 170px;
+  border-radius: 3px;
+  background-color: #f3f4f5;
+  color: #27b6ba;
+  font-size: 16px;
+  cursor: pointer;
+}
+@media (max-width: 475px) {
+  .app-project-box-content__project {
+    width: 100%;
+  }
+}
+@media (max-width: 699px) {
+  .app-project-box-content__load-more-card {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
+@media (max-width: 475px) {
+  .app-project-box {
+    width: 100%;
+  }
+  .app-project-box .app-project-box__content {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
+.app-project-box__content {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  transition-property: transform, box-shadow;
+  transform: translateY(2px);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin: 10px 5px;
+  padding: 10px;
+  width: 226px;
+  height: 170px;
+  border-radius: 3px;
+  background: #fff;
+  color: #464c59;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.app-project-box__content.\--archived {
+  background: repeating-linear-gradient(45deg, #fff, #fff 7px, #f3f4f5 8px, #f3f4f5 11px);
+}
+.app-project-box__content.\--archived .app-togglers {
+  border-top-right-radius: 3px;
+  background-color: #fff;
+}
+.app-project-box__content .app-project-box__title {
+  min-height: 50px;
+}
+.app-project-box__content .app-legacy-project-archived-stamp {
+  margin-top: -10px;
+  margin-left: -10px;
+  border-top-left-radius: 3px;
+}
+.app-project-box__content:hover,
+.app-project-box__content:active {
+  box-shadow: 0 5px 6px 0 rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+.app-project-box__date {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.app-project-box__date-indicator {
+  text-align: right;
+}
+.app-project-box .app-task__due-date {
+  margin-right: 0;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 18px;
+}
+.app-project-box__title {
+  position: relative;
+  min-height: 75px;
+}
+.app-project-box__footer {
+  width: 100%;
+  color: #8d919a;
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.app-project-box__header.\--personal {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+}
+.app-project-box__star {
+  position: absolute;
+  top: 0;
+  right: 0;
+  float: right;
+  padding: 10px;
+  width: 14px;
+  height: 14px;
+  border-bottom: 1px solid #e6e8ec;
+  border-left: 1px solid #e6e8ec;
+  border-bottom-left-radius: 3px;
+  color: #8d919a;
+}
+
+.app-project-box-title-personal {
+  width: 100%;
+  text-align: center;
+}
+.app-project-box-title-personal__content {
+  margin-top: 5px;
+}
+.app-project-box-title-personal__personal-image {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.app-project-box-title-personal__project-name {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 14px;
+}
+.app-project-box-title-personal__project-subtitle {
+  color: #8d919a;
+  font-size: 12px;
+}
+.app-project-box-title {
+  display: -ms-flexbox;
+  display: flex;
+}
+.app-project-box-title__badge {
+  position: relative;
+  top: 1px;
+  margin-right: 5px;
+  color: #8d919a;
+}
+.app-project-box-title__text {
+  max-width: 153px;
+  line-height: 18px;
+}

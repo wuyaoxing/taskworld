@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import ProjectsItem from './ProjectsItem.react'
-
-import { Collapse } from 'ui'
+import ProjectBoxContentContainer from './ProjectBoxContentContainer.react'
+import ProjectView from './ProjectView.react'
 
 class ProjectsBody extends React.PureComponent {
     static propsTypes = {
@@ -12,16 +11,11 @@ class ProjectsBody extends React.PureComponent {
 
     render() {
         return (
-            <section className="projects-body">
-                <Collapse
-                    header="我的项目"
-                    expandedByDefault
-                >
-                    {this.props.projects.map(project => (
-                        <ProjectsItem key={project._id} project={project} />
-                    ))}
-                </Collapse>
-            </section>
+            <ProjectBoxContentContainer>
+                <ProjectView
+                    {...this.props}
+                />
+            </ProjectBoxContentContainer>
         )
     }
 }

@@ -3,8 +3,9 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import SubHeader from 'core/app-layout/SubHeader.react'
 import SubLayout from 'core/app-layout/SubLayout.react'
+
+import ProjectsHeader from './ProjectsHeader.react'
 import ProjectsBody from './ProjectsBody.react'
 
 const mapProjects = state => ({
@@ -20,11 +21,7 @@ class ProjectsPage extends React.PureComponent {
 
     renderTopBar = () => {
         return (
-            <SubHeader
-                left={<div>Left</div>}
-                center={<div>ProjectsPage</div>}
-                right={<div>Right</div>}
-            />
+            <ProjectsHeader />
         )
     }
 
@@ -32,7 +29,7 @@ class ProjectsPage extends React.PureComponent {
         return (
             <section className="app-projects-page">
                 <SubLayout header={this.renderTopBar()}>
-                    <ProjectsBody projects={this.props.projects} />
+                    <ProjectsBody {...this.props} />
                 </SubLayout>
             </section>
         )

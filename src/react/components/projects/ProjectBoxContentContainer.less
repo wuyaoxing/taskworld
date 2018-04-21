@@ -1,0 +1,32 @@
+.app-project-box-content-container {
+  position: relative;
+  margin: 12px auto 20px;
+  max-width: 1180px;
+  color: #fff;
+  transform: translateZ(0)
+    /* Fix Chrome 52 not rendering project box when scrolled. :( */;
+}
+
+@media all and (max-width: 1179px) {
+  .app-project-box-content-container {
+    max-width: 945px;
+  }
+}
+@media all and (max-width: 945px) {
+  .app-project-box-content-container {
+    max-width: 710px;
+  }
+}
+@media all and (max-width: 699px) {
+  .app-project-box-content-container {
+    max-width: 475px;
+  }
+  .app-project-box-content-container.\--is-floating-panel-open {
+    margin-left: 12px;
+  }
+}
+@media all and (max-width: 475px) {
+  .app-project-box-content-container {
+    max-width: 90%;
+  }
+}
