@@ -1,4 +1,4 @@
-import './ProjectBox.less'
+import './ProjectList.less'
 
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
@@ -6,7 +6,7 @@ import React from 'react'
 
 import ProjectBoxTitle from './ProjectBoxTitle.react'
 
-class ProjectBox extends React.PureComponent {
+class ProjectList extends React.PureComponent {
     static propsTypes = {
         project: PropTypes.object.isRequired,
         onGoToProject: PropTypes.func
@@ -14,8 +14,8 @@ class ProjectBox extends React.PureComponent {
 
     renderHeader = () => {
         return (
-            <header className="app-project-box__header">
-                <div className="app-project-box__title">
+            <header className="app-project-list__header">
+                <div className="app-project-list__title">
                     <ProjectBoxTitle project={this.props.project} />
                 </div>
             </header>
@@ -24,7 +24,7 @@ class ProjectBox extends React.PureComponent {
 
     renderFooter = () => {
         return (
-            <footer className="app-project-box__footer">
+            <footer className="app-project-list__footer">
                 <span>任务总数：{this.props.project.task_count}</span>
                 <span>已完成：{this.props.project.completed_count}</span>
             </footer>
@@ -33,11 +33,11 @@ class ProjectBox extends React.PureComponent {
 
     render() {
         const classes = classNames(
-            'app-project-box__content',
+            'app-project-list__content',
             this.props.project.is_archived && '--archived'
         )
         return (
-            <div className="app-project-box">
+            <div className="app-project-list">
                 <div className={classes} onClick={() => this.props.onGoToProject(this.props.project)}>
                     {this.renderHeader()}
                     {this.renderFooter()}
@@ -47,4 +47,4 @@ class ProjectBox extends React.PureComponent {
     }
 }
 
-export default ProjectBox
+export default ProjectList

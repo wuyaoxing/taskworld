@@ -5,13 +5,14 @@ import ProjectBox from './ProjectBox.react'
 
 export default class ProjectBoxContent extends React.Component {
     static propTypes = {
-        projects: PropTypes.array
+        projects: PropTypes.array.isRequired,
+        onGoToProject: PropTypes.func
     }
 
     render() {
         const content = this.props.projects.map(item => (
             <div className="app-project-box-content__project" key={item._id}>
-                <ProjectBox project={item} />
+                <ProjectBox project={item} onGoToProject={this.props.onGoToProject} />
             </div>
         ))
         return (

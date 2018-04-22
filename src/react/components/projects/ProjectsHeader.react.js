@@ -5,21 +5,12 @@ import SubHeader from 'core/app-layout/SubHeader.react'
 
 import { Icon, Tooltip } from 'ui'
 
-const VIEW_TYPE = { GRID: 'grid', LIST: 'list' }
+export const VIEW_TYPE = { GRID: 'grid', LIST: 'list' }
 
 export default class ProjectsHeader extends React.Component {
     static propTypes = {
-        // currentViewType: PropTypes.oneOf(Object.values(VIEW_TYPE))
-    }
-
-    state = {
-        currentViewType: 'grid'
-    }
-
-    onViewTypeChange = viewType => {
-        this.setState({
-            currentViewType: viewType
-        })
+        view: PropTypes.oneOf(Object.values(VIEW_TYPE)).isRequired,
+        onChangeProjectView: PropTypes.func.isRequired
     }
 
     renderViewTypeSwitcher = () => {
@@ -34,9 +25,9 @@ export default class ProjectsHeader extends React.Component {
             }
         }
 
-        const { iconName, tip } = VIEW_TYPES[this.state.currentViewType]
+        const { iconName, tip } = VIEW_TYPES[this.props.view]
         const viewTypeToChange =
-            this.state.currentViewType === VIEW_TYPE.LIST
+            this.props.view === VIEW_TYPE.LIST
                 ? VIEW_TYPE.GRID
                 : VIEW_TYPE.LIST
 
@@ -45,7 +36,7 @@ export default class ProjectsHeader extends React.Component {
                 key="view-type-switcher"
                 name={iconName}
                 onClick={() => {
-                    this.onViewTypeChange(viewTypeToChange)
+                    this.props.onChangeProjectView(viewTypeToChange)
                 }}
             >
                 <Tooltip position="left">{tip}</Tooltip>

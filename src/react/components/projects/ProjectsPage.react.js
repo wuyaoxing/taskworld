@@ -19,9 +19,22 @@ class ProjectsPage extends React.PureComponent {
         projects: PropTypes.array.isRequired
     }
 
+    state = {
+        view: 'grid'
+    }
+
+    onChangeProjectView = view => {
+        this.setState({
+            view
+        })
+    }
+
     renderTopBar = () => {
         return (
-            <ProjectsHeader />
+            <ProjectsHeader
+                view={this.state.view}
+                onChangeProjectView={this.onChangeProjectView}
+            />
         )
     }
 
@@ -29,7 +42,7 @@ class ProjectsPage extends React.PureComponent {
         return (
             <section className="app-projects-page">
                 <SubLayout header={this.renderTopBar()}>
-                    <ProjectsBody {...this.props} />
+                    <ProjectsBody {...this.props} view={this.state.view} />
                 </SubLayout>
             </section>
         )
