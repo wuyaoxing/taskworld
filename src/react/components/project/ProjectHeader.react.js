@@ -6,8 +6,10 @@ import React from 'react'
 import _ from 'lodash'
 
 import SubHeader from 'core/app-layout/SubHeader.react'
-import { Icon, Tooltip } from 'ui'
+import { Icon, Star, Tooltip } from 'ui'
 import { resolveRoute } from './projectLinkUtil'
+
+import * as RouteActions from 'react/action-creators/RouteActions'
 
 export const TABS = {
     TASKS: 'tasks',
@@ -34,7 +36,9 @@ class ProjectHeader extends React.PureComponent {
     }
 
     onBackButtonClick() {
-        window.history.back()
+        RouteActions.pushRoute({
+            name: 'projects'
+        })
     }
 
     renderBackButton = () => (
@@ -47,6 +51,12 @@ class ProjectHeader extends React.PureComponent {
                 name="arrow-left"
             />
         </button>
+    )
+
+    renderStar = () => <Star name="star" active={this.props.project.is_star} />
+
+    renderPrivacyIcon = () => (
+        <Icon name={this.props.project.is_private ? 'lock' : 'public'} />
     )
 
     renderTitle = () => (
@@ -79,6 +89,8 @@ class ProjectHeader extends React.PureComponent {
                 left={
                     <div className="app-project-header__left-section">
                         {this.renderBackButton()}
+                        {this.renderStar()}
+                        {this.renderPrivacyIcon()}
                         {this.renderTitle()}
                     </div>
                 }
