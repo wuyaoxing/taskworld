@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import ProjectBoxTitle from './ProjectBoxTitle.react'
+import ProjectProgress from './ProjectProgress.react'
 
 class ProjectBox extends React.PureComponent {
     static propsTypes = {
@@ -25,8 +26,10 @@ class ProjectBox extends React.PureComponent {
     renderFooter = () => {
         return (
             <footer className="app-project-box__footer">
-                <span>任务总数：{this.props.project.task_count}</span>
-                <span>已完成：{this.props.project.completed_count}</span>
+                <ProjectProgress
+                    tasks={this.props.project.task_count}
+                    completedTasks={this.props.project.completed_count}
+                />
             </footer>
         )
     }
@@ -38,7 +41,10 @@ class ProjectBox extends React.PureComponent {
         )
         return (
             <div className="app-project-box">
-                <div className={classes} onClick={() => this.props.onGoToProject(this.props.project)}>
+                <div
+                    className={classes}
+                    onClick={() => this.props.onGoToProject(this.props.project)}
+                >
                     {this.renderHeader()}
                     {this.renderFooter()}
                 </div>

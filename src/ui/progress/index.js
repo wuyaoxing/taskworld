@@ -28,9 +28,12 @@ export default class Progress extends React.PureComponent {
         }
 
         return (
-            <div className="ui-progress" style={{
-                background: this.props.backgroundColor
-            }}>
+            <div
+                className="ui-progress"
+                style={{
+                    background: this.props.backgroundColor
+                }}
+            >
                 <div style={style} />
             </div>
         )
