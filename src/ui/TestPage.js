@@ -12,7 +12,8 @@ import {
     Radio,
     Switch,
     Star,
-    Collapse
+    Collapse,
+    Progress
 } from 'ui'
 
 import BodyClass from 'react/components/misc/BodyClass.react'
@@ -59,9 +60,18 @@ export default class TestPage extends React.Component {
                 <Divider style={{ background: '#666' }} />
                 <BodyClass className="--app-test-page__test" />
 
+                <h4>Progress</h4>
+                <Progress />
+                <br/>
+                <Progress fraction={5 / 7} size={10} color="purple" />
+                <br/>
+                <Progress fraction={19 / 54} backgroundColor="red" />
+                <br/>
+                <Progress fraction={19 / 54} />
+
                 <h4>Tooltip</h4>
 
-                {[1, 2, 3, 4].map(item => (
+                {[1, 2].map(item => (
                     <div key={item} style={{position: 'relative', width: '100px'}}>
                         Tooltip {item}
                         <Tooltip position="right">dcvdvdvdvdvd {item}</Tooltip>
@@ -69,7 +79,7 @@ export default class TestPage extends React.Component {
                 ))}
 
                 <h4>Collapse</h4>
-                {[1, 2, 3, 4].map(item => (
+                {[1, 2].map(item => (
                     <Collapse
                         header={`header${item}`}
                         className="test-page-collapse"

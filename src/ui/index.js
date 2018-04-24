@@ -11,6 +11,7 @@ import Checkbox from './checkbox'
 import Radio from './radio'
 import Switch from './switch'
 import Star from './star'
+import Progress from './progress'
 
 import Collapse from './collapse'
 
@@ -29,5 +30,6 @@ export {
     Switch,
     Star,
 
-    Collapse
+    Collapse,
+    Progress
 }
