@@ -3,7 +3,7 @@ import React from 'react'
 
 import SubHeader from 'core/app-layout/SubHeader.react'
 
-import { Icon, Tooltip } from 'ui'
+import { ToolbarButton } from 'ui'
 
 export const VIEW_TYPE = { GRID: 'grid', LIST: 'list' }
 
@@ -27,20 +27,17 @@ export default class ProjectsHeader extends React.Component {
 
         const { iconName, tip } = VIEW_TYPES[this.props.view]
         const viewTypeToChange =
-            this.props.view === VIEW_TYPE.LIST
-                ? VIEW_TYPE.GRID
-                : VIEW_TYPE.LIST
+            this.props.view === VIEW_TYPE.LIST ? VIEW_TYPE.GRID : VIEW_TYPE.LIST
 
         return (
-            <Icon
+            <ToolbarButton
                 key="view-type-switcher"
-                name={iconName}
+                iconName={iconName}
+                tip={tip}
                 onClick={() => {
                     this.props.onChangeProjectView(viewTypeToChange)
                 }}
-            >
-                <Tooltip position="left">{tip}</Tooltip>
-            </Icon>
+            />
         )
     }
 

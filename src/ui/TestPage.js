@@ -12,8 +12,9 @@ import {
     Radio,
     Switch,
     Star,
+    Progress,
     Collapse,
-    Progress
+    ToolbarButton
 } from 'ui'
 
 import BodyClass from 'react/components/misc/BodyClass.react'
@@ -59,6 +60,11 @@ export default class TestPage extends React.Component {
                 </Text>
                 <Divider style={{ background: '#666' }} />
                 <BodyClass className="--app-test-page__test" />
+
+                <h4>ToolbarButton</h4>
+                <ToolbarButton iconName="setting" tip="test tip">
+                    test
+                </ToolbarButton>
 
                 <h4>Progress</h4>
                 <Progress />

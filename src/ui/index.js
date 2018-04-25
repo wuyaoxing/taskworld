@@ -14,6 +14,7 @@ import Star from './star'
 import Progress from './progress'
 
 import Collapse from './collapse'
+import ToolbarButton from './toolbarButton'
 
 export {
     Loading,
@@ -29,7 +30,8 @@ export {
     Radio,
     Switch,
     Star,
+    Progress,
 
     Collapse,
-    Progress
+    ToolbarButton
 }

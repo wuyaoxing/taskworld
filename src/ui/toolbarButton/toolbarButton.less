@@ -1,0 +1,74 @@
+.ui-toolbar-button {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 8px;
+  max-width: 100%;
+  outline: none;
+  border: 1px solid #d4d6db;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #696f7a;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.ui-toolbar-button > * {
+  margin: 0 2px;
+}
+.ui-toolbar-button__dropdown {
+  margin-right: 2px;
+  margin-left: 8px;
+}
+.ui-toolbar-button:hover {
+  background-color: #f3f4f5;
+}
+.ui-toolbar-button.\--active {
+  color: #27b6ba;
+}
+.ui-toolbar-button.\--blend {
+  border-color: transparent;
+}
+.ui-toolbar-button.\--disabled {
+  background-color: #f3f4f5;
+  cursor: inherit;
+}
+.ui-toolbar-button.\--size-xlarge {
+  min-height: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+.ui-toolbar-button.\--size-large {
+  min-height: 30px;
+  height: 30px;
+  font-size: 14px;
+}
+.ui-toolbar-button.\--size-regular {
+  min-height: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+.ui-toolbar-button.\--size-small {
+  min-height: 26px;
+  height: 26px;
+  font-size: 14px;
+}
+.ui-toolbar-button__two-sided {
+  display: -ms-flexbox;
+  display: flex;
+}
+.ui-toolbar-button__two-sided .ui-toolbar-button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.ui-toolbar-button__two-sided .ui-toolbar-button:last-child {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
