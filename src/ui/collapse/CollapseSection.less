@@ -3,11 +3,8 @@
   cursor: default;
 }
 .ui-collapse-section__header {
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-align: center;
   align-items: center;
-  padding-left: 5px;
   width: 100%;
   height: 35px;
   border-radius: 2px;
@@ -19,10 +16,18 @@
 .ui-collapse-section__header.\--collapse {
   background-color: #f3f4f5;
 }
+.ui-collapse-section__header.\--bold {
+  font-weight: 600;
+}
 .ui-collapse-section__header:hover,
 .ui-collapse-section__header:active {
   background-color: #d4d6db;
 }
+
+.ui-collapse-section__icon {
+  padding: 8px;
+}
+
 .ui-collapse-section__content {
   height: auto;
 }

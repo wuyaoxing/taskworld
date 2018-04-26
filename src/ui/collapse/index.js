@@ -10,7 +10,8 @@ export default class Collapse extends React.PureComponent {
         children: PropTypes.node.isRequired,
         expandedByDefault: PropTypes.bool,
         expanded: PropTypes.bool,
-        collapseSetIcons: PropTypes.object
+        collapseSetIcons: PropTypes.object,
+        bold: PropTypes.bool
     }
 
     static defaultProps = {
@@ -34,6 +35,7 @@ export default class Collapse extends React.PureComponent {
                 header={this.props.header}
                 className={this.props.classname}
                 expanded={this.state.expanded}
+                bold={this.props.bold}
                 onToggle={this.onToggle}
                 collapseSetIcons={this.props.collapseSetIcons}
             >

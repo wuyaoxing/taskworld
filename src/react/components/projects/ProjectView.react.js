@@ -4,7 +4,7 @@ import React from 'react'
 import ProjectBoxContent from './ProjectBoxContent.react'
 import ProjectListContent from './ProjectListContent.react'
 
-import { Collapse } from 'ui'
+import { Icon, Star, Collapse } from 'ui'
 
 import { VIEW_TYPE } from './ProjectsHeader.react'
 
@@ -21,6 +21,22 @@ class ProjectView extends React.PureComponent {
             name: 'project',
             options: { projectId: project._id }
         })
+    }
+
+    renderHeader = (title, count, icon) => {
+        return (
+            <div>
+                {icon &&
+                    (icon === 'full-star' ? (
+                        <Star active />
+                    ) : (
+                        <Icon name={icon} />
+                    ))}
+                &nbsp;
+                <span>{title}</span>
+                <span>（{count}）</span>
+            </div>
+        )
     }
 
     render() {
@@ -46,32 +62,54 @@ class ProjectView extends React.PureComponent {
             }
         )
 
-        const starProjects = (
-            <Collapse header="收藏项目" expandedByDefault>
+        const starProjects = projectCategories.starProjects.length ? (
+            <Collapse
+                header={this.renderHeader(
+                    '收藏项目',
+                    projectCategories.starProjects.length,
+                    'full-star'
+                )}
+                bold
+                expandedByDefault
+            >
                 <Component
                     projects={projectCategories.starProjects}
                     onGoToProject={this.onGoToProject}
                 />
             </Collapse>
-        )
+        ) : null
 
-        const myProjects = (
-            <Collapse header="我的项目" expandedByDefault>
+        const myProjects = projectCategories.myProjects.length ? (
+            <Collapse
+                header={this.renderHeader(
+                    '我的项目',
+                    projectCategories.myProjects.length
+                )}
+                bold
+                expandedByDefault
+            >
                 <Component
                     projects={projectCategories.myProjects}
                     onGoToProject={this.onGoToProject}
                 />
             </Collapse>
-        )
+        ) : null
 
-        const archivedProjects = (
-            <Collapse header="归档项目" expandedByDefault>
+        const archivedProjects = projectCategories.archivedProjects.length ? (
+            <Collapse
+                header={this.renderHeader(
+                    '归档项目',
+                    projectCategories.archivedProjects.length
+                )}
+                bold
+                expandedByDefault
+            >
                 <Component
                     projects={projectCategories.archivedProjects}
                     onGoToProject={this.onGoToProject}
                 />
             </Collapse>
-        )
+        ) : null
 
         return (
             <section className="app-project-view">
