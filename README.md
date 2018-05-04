@@ -6,11 +6,15 @@
 ```
 前端
 
-webpack + react + react-router-dom + redux|mobx + axios + rxjs + less|styl + es6/7|typescript
+webpack + react + react-router-dom + redux + axios + rxjs + less|styl + es6/7|typescript
 
 后端
 
-nodejs + express + mongoDB + redis
+nodejs + express|koa + mongoDB
+
+数据同步
+
+socket.io
 ```
 
 ## Introduction
@@ -23,4 +27,16 @@ nodejs + express + mongoDB + redis
 - 日志监控
 - 数据同步
 
-期望能够全身心投入到一个项目中，能够不断地优化，以提高代码质量和性能，最终打造出一款引以为傲的产品。
+## TODO
+
+- 项目
+- 看板
+- 任务
+- 甘特图
+- 日历
+- 成员
+- 通知
+
+## Look
+
+> [taskworld](https://wuyaoxing.github.io/taskworld)
